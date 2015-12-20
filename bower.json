@@ -1,0 +1,33 @@
+{
+  "name": "zimaPRJ",
+  "version": "0.0.1",
+  "authors": [
+    "Kamel Arab <kamel.arab@gmail.com>"
+  ],
+  "description": "Empty Angular Project add bower+gulp",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "Empty",
+    "Angular",
+    "Project"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+
+  "devDependencies": {
+    "angular":"",
+    "ui-router":"",
+    "angular-material":"",
+    "angular-animate":"",
+    "angular-aria":"",
+    "hammerjs":""
+  }
+}
