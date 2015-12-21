@@ -3,7 +3,7 @@
  */
 
     angular.module('empty.app.controller',[]);
-    angular.module('empty.app',['ngRoute','ngMaterial','empty.app.controller'])
+    angular.module('empty.app',['ui.router','ngMaterial','empty.app.controller'])
 
 
     .config(['$routeProvider', '$locationProvider',function($routeProvider, v) {
@@ -16,4 +16,4 @@
         // configure html5 to get links working on jsfiddle
         //$locationProvider.html5Mode(true);
     }]);
-angular.bootstrap(document.body,"empty.app");
+angular.bootstrap(document.body);
