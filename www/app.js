@@ -1,4 +1,4 @@
-var routerApp = angular.module('routerApp', ['ui.router']);
+var routerApp = angular.module('routerApp', ['ui.router','uiGmapgoogle-maps']);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     
@@ -19,6 +19,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             controller: function($scope) {
                 $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
             }
+        })
+        .state('mairie', {
+            url: '/mairie',
+            templateUrl: '/templates/mairie.html',
+            controller: "mairieCtrl"
         })
         
         // nested list with just some random string data
@@ -41,6 +46,13 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             
         });
         
+})
+.config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        //    key: 'your api key',
+        v: '3.20', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
 });
 
 routerApp.controller('scotchController', function($scope) {

@@ -21,13 +21,15 @@
     "test",
     "tests"
   ],
-
   "devDependencies": {
-    "angular":"",
-    "ui-router":"",
-    "angular-material":"",
-    "angular-animate":"",
-    "angular-aria":"",
-    "hammerjs":""
+    "angular": "",
+    "ui-router": "",
+    "angular-material": "",
+    "angular-animate": "",
+    "angular-aria": "",
+    "hammerjs": "",
+    "angular-bootstrap": "~0.14.3",
+    "bootstrap": "~3.3.6",
+    "angular-google-maps": "~2.2.1"
   }
 }
