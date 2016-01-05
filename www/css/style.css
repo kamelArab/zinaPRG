@@ -6,13 +6,13 @@
 }
 @font-face {
     font-family: 'open-sans';
-    src: url('/font/open-sans/Opensans-Regular.ttf');
+    src: url('/font/open-sans/OpenSans-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'open-sans-italic';
-    src: url('/font/open-sans/Opensans-Italic.ttf');
+    src: url('/font/open-sans/OpenSans-Italic.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -62,4 +62,22 @@ body{
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #888;
+}
+
+.home .welcome{
+    background-color: #888;
+    padding: 15px 10px;
+    font-family: 'open-sans';
+}
+.home .welcome .title{
+    font-size: 28px ;
+}
+
+.home .welcome .title2{
+    font-size: 24px ;
+}
+
+.home .welcome .body{
+    font-family: open-sans-italic;
+    font-size: 18px ;
 }
