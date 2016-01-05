@@ -1,12 +1,65 @@
+@font-face {
+    font-family: 'alex-brush';
+    src: url('/font/alex-brush/AlexBrush-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url('/font/open-sans/Opensans-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open-sans-italic';
+    src: url('/font/open-sans/Opensans-Italic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .contener{
     width: 100%;
     height: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
 }
 .title{
     font-size: 24px ;
 }
+body{
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
 .content{
     font-size: 16px;
 }
+
+.headerName{
+    font-family: alex-brush;
+    font-size: 50px;
+}
+.headerName2{
+    font-family: open-sans-italic;
+    font-size: 58px;
+}
 .angular-google-map-container { height: 400px; }
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: rgba(185, 73, 73, 0);
+    /* background-image: none; */
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #888;
+}
