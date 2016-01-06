@@ -1,12 +1,16 @@
 /**
  * Created by karab on 18/02/15.
  */
-angular.module('routerApp')
+
+angular.module('routerApp.controller')
     .controller('homeCtrl',['$scope','$log',function($scope,$log){
+        $scope.adresse1 = "Chateau de Grammont, 2733 Avenue Albert Einstein, 34000 Montpellier";
+        $scope.adresse2 = "Domaine de la Banquière, Chemin de la Banquière, 34130 Mauguio";
         $scope.title = "Title";
         $scope.content = "The Body Content";
 
         $scope.map = {center: {latitude: 43.615735, longitude:  3.930256 }, zoom: 18 };
+
         $scope.options = {scrollwheel: false};
         $scope.coordsUpdates = 0;
         $scope.dynamicMoveCtr = 0;
@@ -34,6 +38,7 @@ angular.module('routerApp')
                 }
             }
         };
+
         $scope.map2 = {center: {latitude: 43.597259, longitude:  3.946746 }, zoom: 18 };
         $scope.marker2 = {
             id: 1,
@@ -59,6 +64,23 @@ angular.module('routerApp')
                 }
             }
         };
-        43.597259, 3.946746
+
+        $scope.getMarkupGps=function(where){
+            var isAndroid = navigator.userAgent.match(/Android/);
+            var isIos = navigator.userAgent.match(/iPhone|iPod|iPad/);
+            var goto = $scope.adresse1;
+            switch (where){
+                case "mairie" :goto = $scope.adresse1; break;
+                case "ceremonie" : goto = $scope.adresse2;break;
+                default :break;
+            }
+            if(isAndroid){
+                return "http://maps.apple.com/?q="+goto;
+            }
+            if(isIos){
+                return "http://maps.apple.com/?q="+goto;
+            }
+            return "http://map.google.com/maps?q="+goto;
+        }
 
     }]);

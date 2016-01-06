@@ -55,4 +55,3 @@ angular.module('routerApp').controller('mairieCtrl', function ($scope, $log, $ti
     }, 1000);*/
 });
 
-Longitude : 3.89609

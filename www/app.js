@@ -1,4 +1,5 @@
-var routerApp = angular.module('routerApp', ['ui.router','uiGmapgoogle-maps']);
+angular.module('routerApp.controller',[])
+var routerApp = angular.module('routerApp', ['routerApp.controller','ui.router','uiGmapgoogle-maps']);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     
