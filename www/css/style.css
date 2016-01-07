@@ -39,8 +39,8 @@ body{
     font-size: 50px;
 }
 .headerName2{
-    font-family: open-sans-italic;
-    font-size: 58px;
+    font-family:alex-brush;;
+    font-size: 50px;
 }
 .angular-google-map-container { height: 400px; }
 
@@ -67,9 +67,10 @@ body{
 .home .welcome{
     background-color: #888;
     padding: 15px 10px;
-    font-family: 'open-sans';
+    font-family:'Lobster', cursive;
 }
 .home .welcome .title{
+    font-family:'Lobster', cursive;
     font-size: 28px ;
 }
 
@@ -78,6 +79,25 @@ body{
 }
 
 .home .welcome .body{
-    font-family: open-sans-italic;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px ;
+}
+.home .mission{
+    padding: 15px 10px;
+    font-family:'Lobster', cursive;
+}
+.home .mission .title{
+    font-size: 28px ;
+}
+
+.home .mission .body{
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px ;
+}
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 5px;
+    border-top: 5px solid rgba(33, 179, 139, 0.5);
 }
