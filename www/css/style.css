@@ -101,3 +101,14 @@ hr {
     border: 5px;
     border-top: 5px solid rgba(33, 179, 139, 0.5);
 }
+
+.photoBanquiere{
+    width: 100%;
+}
+.photoGrammont{
+    width: 100%;
+}
+hr.vert{
+    width : 1px;
+    height : 80%;
+}

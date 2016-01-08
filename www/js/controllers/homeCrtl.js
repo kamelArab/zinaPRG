@@ -3,7 +3,7 @@
  */
 
 angular.module('routerApp.controller')
-    .controller('homeCtrl',['$scope','$log',function($scope,$log){
+    .controller('homeCtrl',['$scope','$log','$interval',function($scope,$log,$interval){
         $scope.adresse1 = "Chateau de Grammont, 2733 Avenue Albert Einstein, 34000 Montpellier";
         $scope.adresse2 = "Domaine de la Banquière, Chemin de la Banquière, 34130 Mauguio";
         $scope.title = "Title";
@@ -83,4 +83,60 @@ angular.module('routerApp.controller')
             return "http://map.google.com/maps?q="+goto;
         }
 
-    }]);
+        $scope.finishDate = new Date(2016,5,4,14,30,00);
+        var dateNow = Date()
+
+        $scope.countDown = {
+            days:0,
+            hours:0,
+            minutes:0,
+            seconds:0
+        }
+        $scope.calculateDate2=function(t) {
+
+            var seconds = Math.floor((t / 1000) % 60);
+            var minutes = Math.floor((t / 1000 / 60) % 60);
+            var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+            return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+        }
+
+        $scope.calculateDate=function(t){
+            $scope.countDown.days = days = Math.floor(t / 86400);
+            t -= $scope.countDown.days * 86400;
+            $scope.countDown.hours = Math.floor(t / 3600) % 24;
+            t -= $scope.countDown.hours * 3600;
+            $scope.countDown.minutes = Math.floor(t / 60) % 60;
+            t -= $scope.countDown.minutes * 60;
+            $scope.countDown.seconds = t % 60;
+        }
+
+        $interval(function(){
+            //var diff = Math.floor ($scope.finishDate.getTime()-new Date().getTime())/1000
+                var t = Date.parse( $scope.finishDate) - Date.parse(new Date());
+                $scope.countDown = $scope.calculateDate2(t);
+        }, 1000
+        );
+
+
+    }])
+    .filter('numberFixedLen', function () {
+        return function (n, len) {
+            var num = parseInt(n, 10);
+            len = parseInt(len, 10);
+            if (isNaN(num) || isNaN(len)) {
+                return n;
+            }
+            num = ''+num;
+            while (num.length < len) {
+                num = '0'+num;
+            }
+            return num;
+        };
+    });
