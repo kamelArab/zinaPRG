@@ -1,0 +1,57 @@
+<div class="contener jeviens">
+
+    <form class="form-horizontal text-center" ng-submit="submitForm()"  novalidate>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label" >Nom</label>
+            <div class="col-sm-5">
+                <input ng-model="formData.nom" type="text" class="form-control" id="inputEmail3" placeholder="Nom">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Prénom</label>
+            <div class="col-sm-5">
+                <input ng-model="formData.prenom" type="text" class="form-control" id="inputEmail3" placeholder="Prénom">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-5">
+                <input ng-model="formData.email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group selct">
+            <label for="inputEmail3" class="col-sm-2 control-label">Réception</label>
+            <div class="col-sm-5">
+                <select class="form-control"  ng-model="formData.receptionStr">
+                    <option value="true">Oui bien sur !</option>
+                    <option value="false">Non mais j’ai une bonne excuse !</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group selct">
+            <label for="inputEmail3" class="col-sm-2 control-label">Brunch</label>
+            <div class="col-sm-5">
+                <select class="form-control"  ng-model="formData.brunchStr">
+                    <option value="true">Oui avec joie !</option>
+                    <option value="false">Non mais j’ai une bonne excuse !</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group nbselct">
+            <label for="inputEmail3" class="col-sm-5 control-label">Nombre d’adultes (personnes de plus de 12 ans)</label>
+            <div class="col-sm-1">
+                <input ng-model="formData.adulte" type="number" class="form-control" id="inputEmail3" >
+            </div>
+        </div>
+        <div class="form-group nbselct">
+            <label for="inputEmail3" class="col-sm-5 control-label">Nombres d’enfants (personnes de moins 12 ans)</label>
+            <div class="col-sm-1">
+                <input ng-model="formData.enfant" type="number" class="form-control" id="inputEmail3" >
+            </div>
+        </div>
+        <div class="form-group" style="float: right;padding-right: 40px;">
+            <button type="button" class="btn btn-primary btn-lg"  ng-click="submitForm()" >Valider</button>
+        </div>
+    </form>
+
+</div>

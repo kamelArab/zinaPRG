@@ -3,12 +3,14 @@
 <head>
     <!-- CSS (load material) -->
     <link rel="stylesheet" href="./lib/angular-material/angular-material.layouts.min.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <!-- CSS (load bootstrap) -->
     <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
     <style>
         .navbar { border-radius:0; }
     </style>
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./css/style.css">
 
@@ -57,29 +59,35 @@
                     <li><a href="#">Contact</a></li>
 
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
-                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-                </ul>
+
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
     <div ui-view>
 
     </div>
+    <div class=" panel-footer">
+        KAMEL
+    </div>
     </div>
 <script src="./lib/angular/angular.min.js"></script>
-<script src="./lib/jquery/dist/jquery.min.js"></script>
-<script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./lib/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="./lib/ui-router/release/angular-ui-router.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
     <script src='./lib/lodash/lodash.min.js'></script>
     <script src='./lib/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
-    <script src="./lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.2.1/angular-google-maps.min.js"></script>
 
     <script src="app.js"></script>
 <script src="./js/controllers/homeCrtl.js"></script>
     <script src="./js/controllers/mairieCrtl.js"></script>
+<script src="./js/controllers/jeviensCrtl.js"></script>
 </body>
 </html>

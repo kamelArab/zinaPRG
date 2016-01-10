@@ -1,17 +1,26 @@
 angular.module('routerApp.controller',[])
-var routerApp = angular.module('routerApp', ['routerApp.controller','ui.router','uiGmapgoogle-maps']);
+var routerApp = angular.module('routerApp', ['ngMaterial','routerApp.controller','ui.router','uiGmapgoogle-maps']);
 
-routerApp.config(function($stateProvider, $urlRouterProvider) {
-    
-    $urlRouterProvider.otherwise('/home');
+routerApp.config(function($stateProvider, $urlRouterProvider,$injector) {
+
+    $urlRouterProvider.otherwise( function($injector) {
+        var $state = $injector.get("$state");
+        $state.go("home");
+    });
     
     $stateProvider
         
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/home',
-            templateUrl: '/templates/home.html',
+            templateUrl: './templates/home.html',
             controller : 'homeCtrl'
+        })
+
+        .state('jeviens', {
+            url: '/jeviens',
+            templateUrl: './templates/jeviens.html',
+            controller : 'jeviensCtrl'
         })
         
         // nested list with custom controller
