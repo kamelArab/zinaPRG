@@ -220,7 +220,14 @@ hr.vert{
 }
 .jeviens form select{
     font-family: 'Lobster Two', cursive;
+}
 
+.train .title{
+    font-family:'Lobster', cursive;
+    font-size: 18px;
+}
+.train .body{
+    font-family: 'Lobster Two', cursive;
 }
 
 

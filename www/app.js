@@ -22,6 +22,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$injector) {
             templateUrl: './templates/jeviens.html',
             controller : 'jeviensCtrl'
         })
+        .state('trains', {
+            url: '/trains',
+            templateUrl: './templates/train.html'
+        })
         
         // nested list with custom controller
         .state('home.list', {
