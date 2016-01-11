@@ -1,8 +1,8 @@
 angular.module('routerApp.controller',[])
 var routerApp = angular.module('routerApp', ['ngMaterial','routerApp.controller','ui.router','uiGmapgoogle-maps']);
 
-routerApp.config(function($stateProvider, $urlRouterProvider,$injector) {
-
+routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$uiViewScrollProvider,$injector) {
+    $uiViewScrollProvider.useAnchorScroll();
     $urlRouterProvider.otherwise( function($injector) {
         var $state = $injector.get("$state");
         $state.go("home");
@@ -24,8 +24,15 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$injector) {
         })
         .state('trains', {
             url: '/trains',
-            templateUrl: './templates/train.html'
+            templateUrl: './templates/train.html',
+            controller : 'trainCtrl'
         })
+        .state('trains.detail', {
+            url: '/trains/:scrollTo',
+            templateUrl: './templates/train.html',
+            controller : 'trainCtrl'
+        })
+    $stateParams
         
         // nested list with custom controller
         .state('home.list', {
@@ -67,6 +74,13 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$injector) {
         //    key: 'your api key',
         v: '3.20', //defaults to latest 3.X anyhow
         libraries: 'weather,geometry,visualization'
+    });
+}).run(function($rootScope,$location,$stateParams, $anchorScroll){
+    $rootScope.$on('$stateChangeSuccess', function(event, toState){
+        if($stateParams.scrollTo){
+            $location.hash($stateParams.scrollTo);
+            $anchorScroll();
+        }
     });
 });
 

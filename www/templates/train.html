@@ -3,9 +3,10 @@
         <p class="text-center">
             <span class="title">Billets de train reserves</span>
         </p>
-        <p class="text-justify body">
+        <p class="text-justify title2">
             Qui veut un billet de train ?
-
+        </p>
+        <p class="text-justify body">
             Parce que comme vous, nous aussi on réserve tout à la dernière minute (surtout le marié),
 
             mais surtout parce que nous tenons beaucoup à ce que vous soyez tous parmi nous, grâce à
@@ -13,32 +14,102 @@
             notre cher ami Riadh (Mr SNCF) nous avons pu vous réserver 60 billets de train aller-retour
 
             Paris/Montpellier pour les dates suivantes :
-
-            Aller  Paris  Montpellier
-
-            Vendredi 3 juin à xxxx
-
-            Vendredi 3 juin à xxxx
-
-            Samedi 4 juin à xxxx
-
-            Retour Montpellier  Paris
-
-            Dimanche 5 juin à xxxx
-
-            Dimanche 5 juin à xxxx
-
-            Pour acheter un billet, merci de remplir le formulaire ci-dessous,
-
-            PREMIERS ARRIVES = PREMIERS SERVIS
-
-            Formulaire
-
-            Nom + adresse email
-
-            Votre message
         </p>
+        <div class="hortrains">
+            <span class="departure">Aller  Paris à Montpellier</span>
+            <ul class="departure">
+                <li>Vendredi 3 juin à xxxx</li>
+                <li>Vendredi 3 juin à xxxx</li>
+                <li>Samedi 4 juin à xxxx</li>
+            </ul>
+            <span class="departure">Retour Montpellier à Paris</span>
+            <ul class="departure">
+                <li>Dimanche 5 juin à xxxx</li>
+                <li>Dimanche 5 juin à xxxx</li>
+            </ul>
+        </div>
+        <div class="firstIn">
+            <span >Premiers arrivés = Premiers servis</span>
+        </div>
+    </div>
 
+    <hr>
 
+    <div class="row ">
+        <p class="text-center">
+        <span class="title">Formulaire demande de billet</span>
+    </p>
+    </div>
+    <form class="form-horizontal text-center" ng-submit="submitFormTrain()"  novalidate>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label" >Nom</label>
+            <div class="col-sm-5">
+                <input ng-model="formData.nom" type="text" class="form-control" id="inputEmail3" placeholder="Nom">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Prénom</label>
+            <div class="col-sm-5">
+                <input ng-model="formData.prenom" type="text" class="form-control" id="inputEmail3" placeholder="Prénom">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-5">
+                <input ng-model="formData.email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group selct">
+            <label for="inputEmail3" class="col-sm-2 control-label">Depart</label>
+            <div class="col-sm-5">
+                <select class="form-control"  ng-model="formData.depart">
+                    <option value="Non">Non merci</option>
+                    <option value="Vendredi 3 juin à xxxx">Vendredi 3 juin à xxxx</option>
+                    <option value="Vendredi 3 juin à xxxx">Vendredi 3 juin à xxxx</option>
+                    <option value="Samedi 4 juin à xxxx">Samedi 4 juin à xxxx</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group selct">
+            <label for="inputEmail3" class="col-sm-2 control-label">Retour</label>
+            <div class="col-sm-5">
+                <select class="form-control"  ng-model="formData.retour">
+                    <option value="Non">Non merci</option>
+                    <option value="Dimanche 5 juin à xxxx">Dimanche 5 juin à xxxx</option>
+                    <option value="Dimanche 5 juin à xxxx">Dimanche 5 juin à xxxx</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group nbselct">
+            <label for="inputEmail3" class="col-sm-2 control-label">Nombres de place</label>
+            <div class="col-sm-2">
+                <input ng-model="formData.nbr" type="number" class="form-control" id="inputEmail3" value="1">
+            </div>
+        </div>
+
+        <div class="form-group" style="float: right;padding-right: 40px;">
+            <button type="button" class="btn btn-primary btn-lg"  ng-click="submitFormTrain()" >Valider</button>
+        </div>
+    </form>
+    <hr>
+    <div class="row ">
+        <p class="text-center">
+            <span class="title">La navette</span>
+        </p>
+    </div>
+    <div class="row ">
+
+        <p class="text-justify title2">
+            La Navette de jour
+        </p>
+        <p>Votre chauffeur pour la gare, la mairie et le domaine de Banquière</p>
+        <p>Pour ceux qui viendront en train, et qui n’ont pas de véhicule pour se déplacer sur Montpellier, nous mettons en place un service de navette pouvant conduire 8 personnes à la fois du vendredi 3 juin au dimanche 5 juin pour les trajets suivants : </p>
+        <ul class="departure">
+            <li>Transfert de la gare de Montpellier jusqu’à votre hébergement (vendredi 3 juin journée et Samedi 4 juin matin) pour les horaires des trains que nous avons pré-réservé</li>
+            <li>Transfert de votre logement jusqu’ à la Mairie (samedi 4 juin)</li>
+            <li>Transfert de la Mairie jusqu’au domaine de la Banquière (samedi 4 juin)</li>
+            <li>Transfert de votre logement jusqu’au brunch et retour à votre logement</li>
+            <li>Transfert de votre hébergement jusqu’à la gare de Montpellier (dimanche 5 juin après midi) pour les horaires des trains que nous avons pré-résevé.</li>
+        </ul>
     </div>
 </div>

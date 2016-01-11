@@ -44,7 +44,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Comment venir ? <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li ng-class="{active: menuNav==5,}" ng-click="menuNav = 5;"><a ui-sref="trains">Billets de train</a></li>
-                            <li ng-class="{active: menuNav==3,}" ng-click="menuNav = 3;"><a ui-sref="navette">La navette</a></li>
+                            <li ng-class="{active: menuNav==3,}" ng-click="menuNav = 3;"><a ui-sref="trains.uicontrols({'#':'navette'})navette">La navette</a></li>
                             <li role="separator" class="divider"></li>
                             <li ng-class="{active: menuNav==3,}" ng-click="menuNav = 3;"><a ui-sref="mairie">La Mairie</a></li>
                             <li ng-class="{active: menuNav==4,}" ng-click="menuNav = 4;"><a href="reception">Le Chateaux</a></li>
@@ -89,5 +89,6 @@
 <script src="./js/controllers/homeCrtl.js"></script>
     <script src="./js/controllers/mairieCrtl.js"></script>
 <script src="./js/controllers/jeviensCrtl.js"></script>
+<script src="./js/controllers/trainCrtl.js"></script>
 </body>
 </html>

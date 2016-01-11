@@ -28,7 +28,7 @@
     font-size: 24px ;
 }
 body{
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-family: Calibri, Helvetica, Arial, sans-serif;
 }
 .content{
     font-size: 16px;
@@ -203,32 +203,58 @@ hr.vert{
     padding-left: 10px;
     padding-right: 15px;
 }
-.jeviens form{
+.jeviens form, .train form{
     padding-left: 10px;
     padding-right: 15px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
-.jeviens form label{
-    font-family:'Lobster', cursive;
+.jeviens form label , .train form label{
+
     font-size: 18px;
 
 }
-.jeviens form input{
-    font-family: 'Lobster Two', cursive;
+.jeviens form input, .train form input{
+
 
 }
-.jeviens form select{
-    font-family: 'Lobster Two', cursive;
-}
+.jeviens form select, .train form select{
 
+}
+.train .row{
+
+    margin-left: 25px;
+    margin-right: 25px;
+}
 .train .title{
     font-family:'Lobster', cursive;
-    font-size: 18px;
+    font-size: 40px;
+}
+.train .title2{
+    font-family:'Lobster', cursive;
+    font-size: 30px;
 }
 .train .body{
-    font-family: 'Lobster Two', cursive;
+    font-size: 20px;
 }
+.train span.departure{
+    font-size: 25px;
+    font-weight: bold;
+}
+.train .firstIn{
+    margin-top: 40px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.train ul.departure li{
+    font-size: 20px;
+}
+.train .hortrains{
+    margin-left: 30px;
+}
+
+
 
 
 
