@@ -43,6 +43,12 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
             templateUrl: '/templates/mairie.html',
             controller: "mairieCtrl"
         })
+        .state('reception', {
+            url: '/reception',
+            templateUrl: '/templates/reception.html',
+            controller: "receptionCtrl"
+        })
+
         
         // nested list with just some random string data
         .state('home.paragraph', {

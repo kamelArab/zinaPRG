@@ -20,7 +20,7 @@
 
 <!-- apply our angular app to our site -->
 <body ng-app="routerApp">
-<div class="contener" style="padding-top: 10px">
+<div class="contener index body" >
 
     <div layout="row" layout-align="center center">
         <div>
@@ -44,10 +44,10 @@
                         <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Comment venir ? <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li ng-class="{active: menuNav==5,}" ng-click="menuNav = 5;"><a ui-sref="trains">Billets de train</a></li>
-                            <li ng-class="{active: menuNav==3,}" ng-click="menuNav = 3;"><a ui-sref="trains({scrollTo:'navette'})">La navette</a></li>
+                            <li ng-class="{active: menuNav==2,}" ng-click="menuNav = 2;"><a ui-sref="trains({scrollTo:'navette'})">La navette</a></li>
                             <li role="separator" class="divider"></li>
                             <li ng-class="{active: menuNav==3,}" ng-click="menuNav = 3;"><a ui-sref="mairie">La Mairie</a></li>
-                            <li ng-class="{active: menuNav==4,}" ng-click="menuNav = 4;"><a href="reception">Le Chateaux</a></li>
+                            <li ng-class="{active: menuNav==4,}" ng-click="menuNav = 4;"><a ui-sref="reception">Le Domaine de la Banquière</a></li>
                             <li><a href="#">Something else here</a></li>
 
                             <li class="dropdown-header">Nav header</li>
@@ -88,6 +88,7 @@
     <script src="app.js"></script>
 <script src="./js/controllers/homeCrtl.js"></script>
     <script src="./js/controllers/mairieCrtl.js"></script>
+<script src="./js/controllers/receptionCrtl.js"></script>
 <script src="./js/controllers/jeviensCrtl.js"></script>
 <script src="./js/controllers/trainCrtl.js"></script>
 </body>
