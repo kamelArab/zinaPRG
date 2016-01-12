@@ -25,15 +25,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
         .state('trains', {
             url: '/trains',
             templateUrl: './templates/train.html',
-            controller : 'trainCtrl'
+            controller : 'trainCtrl',
+            params :{
+                scrollTo: undefined
+            }
         })
-        .state('trains.detail', {
-            url: '/trains/:scrollTo',
-            templateUrl: './templates/train.html',
-            controller : 'trainCtrl'
-        })
-    $stateParams
-        
         // nested list with custom controller
         .state('home.list', {
             url: '/list',
