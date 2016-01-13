@@ -21,7 +21,7 @@
 <!-- apply our angular app to our site -->
 <body ng-app="routerApp">
 <div class="contener index body" >
-
+    <header  class="pos">
     <div layout="row" layout-align="center center">
         <div>
             <span class="headerName" style="margin-right: 10px">Zina</span> <span class="headerName2" style="padding-top: 5px">&</span><span class="headerName" style="margin-left: 10px">Benjamin Jr.</span>
@@ -63,12 +63,13 @@
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
-    <div ui-view>
+    </header>
+    <div id="container" ui-view>
 
     </div>
-    <div class=" panel-footer">
+    <footer class="pos1 panel-footer">
         KAMEL
-    </div>
+    </footer>
     </div>
 <script src="./lib/angular/angular.min.js"></script>
 <script src="./lib/ui-router/release/angular-ui-router.min.js"></script>
