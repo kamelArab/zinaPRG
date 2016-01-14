@@ -295,6 +295,9 @@ hr.vert{
 .bold{
     font-weight: bold;
 }
+.glyph .glyph-icon:before{
+    font-size: 64px;
+}
 
 
 

@@ -49,6 +49,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
             url: '/brunch',
             templateUrl: '/templates/brunch.html'
         })
+        .state('programme', {
+            url: '/programme',
+            templateUrl: '/templates/programme.html'
+        })
 
 
         

@@ -1,0 +1,64 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-camera115:before {
+	content: "\e000";
+}
+.flaticon-cocktail32:before {
+	content: "\e001";
+}
+.flaticon-cutlery23:before {
+	content: "\e002";
+}
+.flaticon-dancer5:before {
+	content: "\e003";
+}
+.flaticon-diamond36:before {
+	content: "\e004";
+}
+.flaticon-drinks11:before {
+	content: "\e005";
+}
+.flaticon-drinks12:before {
+	content: "\e006";
+}
+.flaticon-lemonade2:before {
+	content: "\e007";
+}
+.flaticon-lunch4:before {
+	content: "\e008";
+}
+.flaticon-man204:before {
+	content: "\e009";
+}
+.flaticon-man209:before {
+	content: "\e00a";
+}
+.flaticon-meal19:before {
+	content: "\e00b";
+}
+.flaticon-museum39:before {
+	content: "\e00c";
+}
+.flaticon-photos12:before {
+	content: "\e00d";
+}
+.flaticon-rings4:before {
+	content: "\e00e";
+}
+.flaticon-vehicle12:before {
+	content: "\e00f";
+}
