@@ -30,14 +30,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
                 scrollTo: undefined
             }
         })
-        // nested list with custom controller
-        .state('home.list', {
-            url: '/list',
-            templateUrl: 'partial-home-list.html',
-            controller: function($scope) {
-                $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-            }
-        })
+
         .state('mairie', {
             url: '/mairie',
             templateUrl: '/templates/mairie.html',
@@ -48,13 +41,16 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
             templateUrl: '/templates/reception.html',
             controller: "receptionCtrl"
         })
-
-        
-        // nested list with just some random string data
-        .state('home.paragraph', {
-            url: '/paragraph',
-            template: 'I could sure use a drink right now.'
+        .state('cadeau', {
+            url: '/cadeau',
+            templateUrl: '/templates/cadeau.html'
         })
+        .state('brunch', {
+            url: '/brunch',
+            templateUrl: '/templates/brunch.html'
+        })
+
+
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('about', {

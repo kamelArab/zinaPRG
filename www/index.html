@@ -48,14 +48,16 @@
                             <li role="separator" class="divider"></li>
                             <li ng-class="{active: menuNav==3,}" ng-click="menuNav = 3;"><a ui-sref="mairie">La Mairie</a></li>
                             <li ng-class="{active: menuNav==4,}" ng-click="menuNav = 4;"><a ui-sref="reception">Le Domaine de la Banquière</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li ng-class="{active: menuNav==8,}" ng-click="menuNav = 8;"><a ui-sref="brunch">Le Brunch</a></li>
+
 
                             <li class="dropdown-header">Nav header</li>
                             <li><a href="#">Separated link</a></li>
                             <li><a href="#">One more separated link</a></li>
                         </ul>
                     </li>
-                    <li ng-class="{active: menuNav==2,}" ng-click="menuNav = 2;"><a ui-sref="about">About</a></li>
+                    <li ng-class="{active: menuNav==6,}" ng-click="menuNav = 6;"><a ui-sref="cadeau">Cadeau</a></li>
+                    <li ng-class="{active: menuNav==7,}" ng-click="menuNav = 7;"><a ui-sref="about">About</a></li>
                     <li><a href="#">Contact</a></li>
 
                 </ul>
