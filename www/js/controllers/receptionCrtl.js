@@ -46,7 +46,7 @@ angular.module('routerApp.controller').controller('receptionCtrl', function ($sc
             latitude: 43.597259,
             longitude:  3.946746
         },
-        options: { draggable: false },
+        options: { draggable: false,  labelContent:"Domaine de la Banquière" },
         events: {
             dragend: function (marker, eventName, args) {
                 $log.log('marker dragend');

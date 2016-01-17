@@ -1,45 +1,49 @@
 <div class="contener train">
     <div class="row ">
         <p class="text-center">
-            <span class="title">Le Domaine de la Banquière</span>
+            <span class="title"><span class="title-">------------</span> Le Domaine de la Banquière <span class="title-">------------</span></span>
         </p>
 
         <br>
         <div>
              <ui-gmap-google-map center='map2.center' zoom='map2.zoom'>
-                 <ui-gmap-marker  coords="marker2.coords" icon="marker2.icon" idkey="marker2.id"></ui-gmap-marker>
+                 <ui-gmap-marker  coords="marker2.coords" icon="marker2.icon" idkey="marker2.id">
+                     <ui-gmap-window show="true">
+                         <div>{{marker2.options.labelContent}}</div>
+                     </ui-gmap-window>
+                 </ui-gmap-marker>
              </ui-gmap-google-map>
         </div>
         <br>
-        <p class="text-justify">
-            <span class="title2">Tous au domaine !</span>
-        </p>
+        <div class="col-xs-12 col-md-8">
+            <p>
+                <span class="title2 bold">Tous au domaine !</span>
+            </p>
+
+            <p class="text-justify">
+                Après la mairie, rendez-vous au Domaine de la Banquière pour le reste des festivités. A quelques kilomètres du Château de Grammont,
+                les jardins du Domaine de la Banquière nous attendent pour des rafraichissements, une après-midi ludique, une cérémonie personnelle,
+                un cocktail en fin de journée et une soirée de fête. Pour plus de détails, consultez le programme !
+            </p>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <p class="text-justify">
+                <span class="title2 bold">Ou et quand ?</span>
+            </p>
+            <p class="text-justify">
+            <ul>
+                <li>Samedi 4 juin 2016</li>
+                <li>15H30</li>
+                <li>Domaine de la Banquière, Chemin de la Banquière, 34130 Mauguio</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
 
         <p class="text-justify">
-            Après la mairie, rendez-vous au Domaine de la Banquière pour le reste des festivités. A quelques kilomètres du Château de Grammont,
-            les jardins du Domaine de la Banquière nous attendent pour des rafraichissements, une après-midi ludique, une cérémonie personnelle,
-            un cocktail en fin de journée et une soirée de fête. Pour plus de détails, consultez le programme !
-        </p>
-        <p class="text-justify">
-            <span class="title2">Céremonie d'engagement</span>
-        </p>
-
-    <p class="text-justify">
-        Parce que nous voulons un mariage qui nous ressemble et qui intégrer nos deux cultures, nous avons fait le choix d’une cérémonie d’engagement.
-        C’est donc dans l’un des jardins du domaine, avec les mots que nous avons choisis, nous prononcerons un deuxième oui et enfilerons nos alliances.
-    </p>
-        <p class="text-justify">
-            <span class="title2">Ou et quand ?</span>
-        </p>
-        <p class="text-justify">
-         <ul>
-            <li>Samedi 4 juin 2016</li>
-            <li>15H30</li>
-            <li>Domaine de la Banquière, Chemin de la Banquière, 34130 Mauguio</li>
-        </ul>
-        </p>
-        <p class="text-justify">
-            <span class="title2">Comment y aller ?</span>
+            <span class="title2 bold">Comment y aller ?</span>
         </p>
         <p class="text-justify">
             Le Domaine de la Banquière se trouve à l’entrée de la ville de Montpellier et à 5 minutes en voiture du Domaine de Grammont.

@@ -20,7 +20,7 @@ angular.module('routerApp.controller').controller('mairieCtrl', function ($scope
             latitude: 43.615735,
             longitude:  3.930256
         },
-        options: { draggable: false },
+        options: { draggable: false, labelContent:"Mairie" },
         events: {
             dragend: function (marker, eventName, args) {
                 $log.log('marker dragend');
