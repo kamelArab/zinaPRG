@@ -1,0 +1,75 @@
+<div class="contener train">
+    <div class="row ">
+        <p class="text-center">
+            <span class="title">Ou dormir ?</span>
+        </p>
+        <p class="text-justify text-center title2">
+            AirBnB
+        </p>
+        <p class="text-justify text-center body">
+            Airbnb reste l’une des solutions les plus intéressantes pour se loger à <a href="https://www.airbnb.fr/s/Montpellier?checkin=03%2F06%2F2016&checkout=05%2F06%2F2016&guests=2&price_min=50&price_max=421&min_bedrooms=3&zoom=13&search_by_map=true&sw_lat=43.55000346541776&sw_lng=3.8619145716447747&ne_lat=43.634961492060555&ne_lng=3.9492902125139153&ss_id=yqcnai1m" target="_blank">Montpellier</a>.
+            Voici ci-dessous une carte des quartiers de la ville que nous vous recommandons pour faciliter vos déplacements pendant le week-end.
+        </p>
+        <br>
+        <div>
+            <ui-gmap-google-map center='map2.center' zoom='map2.zoom'>
+                <ui-gmap-marker  coords="marker.coords" icon="marker.icon" idkey="marker.id">
+                    <ui-gmap-window show="true">
+                        <div>{{marker.options.labelContent}}</div>
+                    </ui-gmap-window>
+                </ui-gmap-marker>
+                <ui-gmap-marker  coords="marker2.coords" icon="marker2.icon" idkey="marker2.id">
+                    <ui-gmap-window show="true">
+                        <div>{{marker2.options.labelContent}}</div>
+                    </ui-gmap-window>
+                </ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
+
+        <br>
+
+        <hr>
+        <p class="text-justify text-center title2">
+            Les hotels
+        </p>
+        <p class="text-justify text-center body">
+            Vous préférez loger à l'hôtel ? Pas de souci ! Voici les hôtels aux alentours de la mairie et du domaine de la Banquière.
+        </p>
+        <p class="text-justify text-center body">
+            <span class="bold"> Hôtel Campanile Le Millénaire</span><br>
+            A 5km/ 6min de la salle<br>
+            Chambres doubles à partir de 46 euros<br>
+            1083 Rue Henri Becquerel, Zac Du Millénaire, 34000 Montpellier<br>
+            04 67 64 85 85<br>
+            <a href="mailto:montpellier.lemillenaire@campanile.fr">montpellier.lemillenaire@campanile.fr</a><br>
+            Voir le site :<a href="http://www.campanile.com/fr/hotels/campanile-montpellier-est-le-millenaire" target="_blank">http://www.campanile.com/fr/hotels/campanile-montpellier-est-le-millenaire</a> <br>
+        </p>
+        <p class="text-justify text-center body">
+            <span class="bold">Hôtel Mercure Antigone</span><br>
+            A 6 km / 7 min de la salle<br>
+            Chambres doubles à partir de 76 euros<br>
+            285 bld de l'aéroport International-Antigone 34000 MONTPELLIER <br>
+            04 67 20 63 63<br>
+            <a href="mailto:H1544-GM@accor.com">H1544-GM@accor.com</a><br>
+            Voir le site :<a href="http://www.mercure.com/fr/hotel-1544-hotel-mercure-montpellier-centre-antigone/index.shtml" target="_blank">http://www.mercure.com/fr/hotel-1544-hotel-mercure-montpellier-centre-antigone/index.shtml</a> <br>
+        </p>
+        <p class="text-justify text-center body">
+            <span class="bold">Hôtel Kyriad Antigone</span><br>
+            A 6 km / 7 min de la salle<br>
+            Chambres doubles à partir de 76 euros<br>
+            890 Avenue Jean Mermoz, 34000 Montpellier <br>
+            04 67 64 88 50<br>
+            Voir le site :<a href="info@kyriad-montpelliercentre.com" target="_blank">info@kyriad-montpelliercentre.com</a> <br>
+        </p>
+        <p class="text-justify text-center body">
+            <span class="bold"> HÔTEL IBIS MONTPELLIER CENTRE</span><br>
+            A 7km / 8min de la salle<br>
+            Chambres doubles à partir de 75 euros<br>
+            95, place Vauban Boulevard d'Antigone 34000 MONTPELLIER <br>
+            04 67 64 06 64<br>
+            <a href="mailto:H1391@accor.com">H1391@accor.com</a><br>
+            Voir le site :<a href="http://www.accorhotels.com/fr/hotel-1391-ibis-montpellier-centre/index.shtml" target="_blank">http://www.accorhotels.com/fr/hotel-1391-ibis-montpellier-centre/index.shtml</a> <br>
+        </p>
+    </div>
+
+</div>

@@ -2,47 +2,61 @@
 
 <div class="row welcome">
     <div class="col-xs-12 col-md-6">
-        <p class="text-center">
+        <p class=" text-center">
             <br>
             <span class="title ">Hourrah, vous voilà ! </span></br>
             <span class="title2 ">Les faire-part sont donc bien arrivés !</span> </br></br>
                 <span class="body">Bienvenue entre ces pages qui regroupent toutes les informations nécessaires pour participer au mariage… </br>
-                    Trouvez votre chemin, découvrez le programme, réservez votre hébergement et quelques adresses utiles. On vous dit au 4 juin !</span>
+                    Trouvez votre chemin, découvrez le programme, réservez votre hébergement et quelques adresses utiles.<br> On vous dit au 4 juin !</span>
         </p>
 
     </div>
-    <div class="col-xs-12 col-md-6 text-center"><img class="imgCouple" src="./img/maried2.jpg"></div>
+    <div class="col-xs-12 col-md-6 text-center"><img class="imgCouple" src="./img/couple2.jpg"></div>
 </div>
-<hr>
+
 <div class="row mission">
 
-    <p class="text-center">
+    <p class="text-justify">
         <span class="title">Votre mission pour les prochaines semaines</span>
     </p>
 
-    <p class="text-center body">
+    <p class="text-justify body todo">
+        <ul>
+    <ol>1. Confirmer votre présence au mariage (<a  ui-sref="jeviens">Part ici</a>)</ol>
+    <ol>2. Réserver vos billets de train (<a  ui-sref="trains">Part ici</a>)</ol>
+    <ol>3. Réserver votre logement (<a  ui-sref="dormir">Part ici</a>)</ol>
+    <ol>4. Et poser vos congés ! (Désolé faut voir avec votre patron)</ol>
 
-    Confirmer votre présence au mariage (<a  ui-sref="jeviens">Part ici</a>)
-    <br>
+    </ul>
 
-     Réserver vos billets de train (<a  ui-sref="trains">Part ici</a>)
-    <br>
-
-    Réserver votre logement (Part ici)
-
-    <br>
-
-     Et poser vos congés ! (pas ici)
     </p>
 </div>
-<hr>
+    <div class="row countDown">
+        <div class="col-xs-12 col-md-12 text-center"><span class="title">Le compte à rebours est lancé !</span><br><span class="title2">Rendez-vous dans …</span></div>
+        <div class="col-xs-12 col-md-12 text-center" style="margin-top: 25px">
+            <div class="col-md-3 col-xs-3 text-center space">
+                <div class="count-w2"><span class="count-label-w">{{countDown.days |numberFixedLen:2}}</span><span class="label-w">Jours</span></div>
+            </div>
+            <div class="col-md-3 col-xs-3 text-center space">
+                <div class="count-w2"><span class="count-label-w">{{countDown.hours |numberFixedLen:2}}</span><span class="label-w">Heures</span></span></div>
+            </div>
+            <div class=" col-md-3 col-xs-3 text-center space">
+                <div class="count-w2"><span class="count-label-w">{{countDown.minutes |numberFixedLen:2}}</span><span class="label-w">Minutes</span></div>
+            </div>
+            <div class="col-md-3 col-xs-3 text-center space">
+                <div class="count-w2"><span class="count-label-w">{{countDown.seconds |numberFixedLen:2}}</span><span class="label-w">Secondes</span></div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
 <div class="row where">
     <div class="text-center"><span class="title">Ça se passe ici ?</span></div>
     <div class="body">
         <div class="row">
             <div class="col-xs-12 col-md-6">
                 <div class="col-xs-12 col-md-12 text-center">
-                    <img src="./img/DomaineGrammont.JPG" class="photoGrammont">
+                    <img src="./img/DomaineGrammont2.jpg" class="photoGrammont">
 
                     <!--   <ui-gmap-google-map center='map.center' zoom='map.zoom'>
                            <ui-gmap-marker  coords="marker.coords" icon="marker.icon" idkey="marker.id"></ui-gmap-marker>
@@ -53,15 +67,15 @@
 
                     <p class="ceremoniLabel">Rendez-vous à 14h30 devant la salle des mariages de Montpellier Domaine de
                         Grammont, 2733
-                        Avenue Albert Einstein, 34000 Montpellier <a href="{{getMarkupGps(mairie)}}">ici</a>
-                        Toutes les infos sur la cérémonie civile par ici
+                        Avenue Albert Einstein, 34000 Montpellier <br>
+                        <span class="textLink">Toutes les infos sur la cérémonie civile par <a ui-sref="mairie">ici</a></span>
                     </p>
                 </div>
             </div>
 
             <div class="col-xs-12 col-md-6">
                 <div class="col-xs-12 col-md-12 text-center">
-                    <img src="./img/Banquiere.jpg" class="photoBanquiere">
+                    <img src="./img/banquiere2.jpg" class="photoBanquiere">
                     <!--     <ui-gmap-google-map center='map2.center' zoom='map2.zoom'>
                              <ui-gmap-marker  coords="marker2.coords" icon="marker2.icon" idkey="marker2.id"></ui-gmap-marker>
                          </ui-gmap-google-map>-->
@@ -70,8 +84,9 @@
                     <h2>Cérémonie d’engagement et party</h2>
 
                     <p class="ceremoniLabel">Rendez-vous au Domaine de la Banquière pour la suite des événements.Domaine de la
-                        Banquière, Chemin de la Banquière, 34130 Mauguio <a href="{{getMarkupGps(ceremonie)}}">ici</a>
-                        Toutes les infos sur la cérémonie d’engagement par là
+                        Banquière, Chemin de la Banquière, 34130 Mauguio.<br>
+                        <span class="textLink">
+                        Toutes les infos sur la cérémonie d’engagement par <a ui-sref="reception">là</a> </span>
                     </p>
                 </div>
             </div>
@@ -79,22 +94,6 @@
     </div>
 </div>
 <hr>
-<div class="row countDown">
-    <div class="col-xs-12 col-md-12 text-center"><span class="title">Le compte à rebours est lancé !</span><br><span class="title2">Rendez-vous dans …</span></div>
-    <div class="col-xs-12 col-md-12 text-center" style="margin-top: 25px">
-        <div class="col-md-3 col-xs-3 text-center space">
-            <div class="count-w2"><span class="count-label-w">{{countDown.days |numberFixedLen:2}}</span><span class="label-w">Jours</span></div>
-        </div>
-        <div class="col-md-3 col-xs-3 text-center space">
-            <div class="count-w2"><span class="count-label-w">{{countDown.hours |numberFixedLen:2}}</span><span class="label-w">Heures</span></span></div>
-        </div>
-        <div class=" col-md-3 col-xs-3 text-center space">
-            <div class="count-w2"><span class="count-label-w">{{countDown.minutes |numberFixedLen:2}}</span><span class="label-w">Minutes</span></div>
-        </div>
-        <div class="col-md-3 col-xs-3 text-center space">
-            <div class="count-w2"><span class="count-label-w">{{countDown.seconds |numberFixedLen:2}}</span><span class="label-w">Secondes</span></div>
-        </div>
-    </div>
-</div>
+
 
 </div>

@@ -23,11 +23,7 @@
 <body ng-app="routerApp">
 <div class="contener index body" >
     <header  class="pos">
-    <div layout="row" layout-align="center center">
-        <div>
-            <span class="headerName" style="margin-right: 10px">Zina</span> <span class="headerName2" style="padding-top: 5px">&</span><span class="headerName" style="margin-left: 10px">Benjamin Jr.</span>
-        </div>
-    </div>
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -40,8 +36,6 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
                 <ul class="nav navbar-nav" ng-init="menuNav = 1">
-                    <li ng-class="{active: menuNav==1,}" ng-click="menuNav = 1;"><a ui-sref="home">Accueil</a></li>
-
                     <li class="dropdown">
                         <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Comment venir ? <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -51,25 +45,22 @@
                             <li ng-class="{active: menuNav==3,}" ng-click="menuNav = 3;"><a ui-sref="mairie">La Mairie</a></li>
                             <li ng-class="{active: menuNav==4,}" ng-click="menuNav = 4;"><a ui-sref="reception">Le Domaine de la Banquière</a></li>
                             <li ng-class="{active: menuNav==8,}" ng-click="menuNav = 8;"><a ui-sref="brunch">Le Brunch</a></li>
-
-
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
                         </ul>
                     </li>
                     <li ng-class="{active: menuNav==9,}" ng-click="menuNav = 9;"><a ui-sref="programme">Au programme ?</a></li>
                     <li ng-class="{active: menuNav==10,}" ng-click="menuNav = 10;"><a ui-sref="dormir">Ou dormir ?</a></li>
-                    <li ng-class="{active: menuNav==6,}" ng-click="menuNav = 6;"><a ui-sref="cadeau">Cadeau</a></li>
-                    <li ng-class="{active: menuNav==7,}" ng-click="menuNav = 7;"><a ui-sref="about">About</a></li>
-                    <li><a href="#">Contact</a></li>
-
+                    <li ><a ui-sref="home"><img src="./img/logo-final.png" style="width: 96px; height: 96px;"/></a></li>
+                    <li ng-class="{active: menuNav==6,}" ng-click="menuNav = 6;" style="float: right"><a ui-sref="cadeau">Cadeau</a></li>
+                    <li ng-class="{active: menuNav==11,}" ng-click="menuNav = 11;"  style="float: right"><a ui-sref="liensUtils">Liens utiles</a></li>
+                    <li ng-class="{active: menuNav==7,}" ng-click="menuNav = 7;"  style="float: right"><a ui-sref="contact">Contact</a></li>
                 </ul>
 
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
+        <hr>
     </header>
+
     <div id="container" ui-view>
 
     </div>
@@ -98,5 +89,7 @@
 <script src="./js/controllers/receptionCrtl.js"></script>
 <script src="./js/controllers/jeviensCrtl.js"></script>
 <script src="./js/controllers/trainCrtl.js"></script>
+<script src="./js/controllers/dormirCrtl.js"></script>
+<script src="./js/controllers/contactCrtl.js"></script>
 </body>
 </html>

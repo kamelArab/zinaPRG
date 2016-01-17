@@ -1,15 +1,17 @@
 /**
- * Created by kamel on 31/12/2015.
+ * Created by kamel on 15/01/2016.
  */
 
-angular.module('routerApp.controller').controller('receptionCtrl', function ($scope, $log, $timeout) {
+angular.module('routerApp.controller').controller('dormirCtrl', function ($scope, $log, $timeout) {
 
     $scope.adresse1 = "Chateau de Grammont, 2733 Avenue Albert Einstein, 34000 Montpellier";
     $scope.adresse2 = "Domaine de la Banquière, Chemin de la Banquière, 34130 Mauguio";
     $scope.title = "Title";
     $scope.content = "The Body Content";
 
-    $scope.map = {center: {latitude: 43.615735, longitude:  3.930256 }, zoom: 15 };
+
+
+    $scope.map = {center: {latitude: 43.615735, longitude:  3.1 }, zoom: 18 };
 
     $scope.options = {scrollwheel: false};
     $scope.coordsUpdates = 0;
@@ -20,7 +22,8 @@ angular.module('routerApp.controller').controller('receptionCtrl', function ($sc
             latitude: 43.615735,
             longitude:  3.930256
         },
-        options: { draggable: false },
+        options: { draggable: false,labelContent: "Mairie" },
+
         events: {
             dragend: function (marker, eventName, args) {
                 $log.log('marker dragend');
@@ -39,14 +42,14 @@ angular.module('routerApp.controller').controller('receptionCtrl', function ($sc
         }
     };
 
-    $scope.map2 = {center: {latitude: 43.5952698790916, longitude:  3.944 }, zoom: 16 };
+    $scope.map2 = {center: {latitude: 43.60, longitude:  3.91 }, zoom: 13 };
     $scope.marker2 = {
         id: 1,
         coords: {
             latitude: 43.597259,
             longitude:  3.946746
         },
-        options: { draggable: false },
+        options: { draggable: false,labelContent :"Le Domaine de la Banquière"},
         events: {
             dragend: function (marker, eventName, args) {
                 $log.log('marker dragend');
@@ -84,4 +87,3 @@ angular.module('routerApp.controller').controller('receptionCtrl', function ($sc
     }
 
 });
-

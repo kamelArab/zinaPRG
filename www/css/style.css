@@ -16,13 +16,20 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'centaur';
+    src: url('../font/Centaur.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .row{
     margin-left: 0px;
     margin-right: 0px;
 }
 header,footer {
 width: 100%;
-    height: 140px;
+    height: 200px;
     background: #ffffff;
     position:fixed;
     color:#000;
@@ -53,15 +60,14 @@ footer{
 .contener{
     width: 100%;
     height: 100%;
-
     margin-top: 10px;
-    max-width: 860px;
+    width: 860px;
 }
 .title{
     font-size: 24px ;
 }
 body{
-    font-family: Calibri, Helvetica, Arial, sans-serif;
+    font-family: centaur, Helvetica, Arial, sans-serif;
 }
 .index.body{
     margin-left: auto;
@@ -79,11 +85,9 @@ body{
 }
 
 .headerName{
-    font-family: alex-brush;
     font-size: 50px;
 }
 .headerName2{
-    font-family:alex-brush;;
     font-size: 50px;
 }
 .angular-google-map-container { height: 400px; }
@@ -91,6 +95,9 @@ body{
 .navbar-default {
     background-color: #f8f8f8;
     border-color: #e7e7e7;
+}
+nav.navbar.navbar-default {
+    margin-top: 50px;
 }
 .navbar-toggle {
     position: relative;
@@ -111,63 +118,63 @@ body{
 .home .welcome{
     background-color: #888;
     padding: 15px 10px;
-    font-family:'Lobster', cursive;
+    padding-top: 50px;
+    color: white;
 }
-.home .welcome .title{
-    font-family:'Lobster', cursive;
+.home .welcome .title,.home .mission .title{
     font-size: 28px ;
 }
 
 .home .welcome .title2{
-    font-size: 24px ;
+    font-size: 22px ;
 }
 
 .home .welcome .body{
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Lobster Two', cursive;
     font-size: 18px ;
 }
 .home .mission{
+    margin-top: 13px;
     padding: 15px 10px;
-    font-family:'Lobster', cursive;
+    background-color: rgba(74, 183, 194, 1);
+    color: white;
 }
-.home .mission .title{
-    font-family:'Lobster', cursive;
-    font-size: 40px ;
-}
+
 
 .home .mission .body{
     margin-top: 15px;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Lobster Two', cursive;
     font-size: 25px ;
+}
+
+.home .mission  ul ol{
+    padding-left: 15px;
+    font-size: 18px ;
+}
+.home .mission a{
+    color: black;
+}
+.home .where a{
+    color: rgba(74, 183, 194, 1);
 }
 
 .home .where{
     padding: 15px 10px;
-    font-family:'Lobster', cursive;
 }
 .home .where .title{
-    font-family:'Lobster', cursive;
     font-size: 40px ;
 }
 .home .where .body{
-    margin-top: 25px;
-    font-family:'Lobster', cursive;
+    margin-top: 25px;;
 }
 .home .where .body .row .ceremoniLabel{
     margin-top: 20px;
-    font-family: 'Lobster Two', cursive;
     font-size: 22px ;
     margin-bottom: 25px;
 }
 
 .home .countDown .title{
-    font-family:'Lobster', cursive;
     font-size: 40px ;
 }
 .home .countDown .title2{
-    font-family:'Lobster', cursive;
     font-size: 30px ;
 }
 
@@ -176,17 +183,17 @@ hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 5px;
-    border-top: 5px solid rgba(33, 179, 139, 0.5);
+    border-top: 5px solid rgba(74, 183, 194,1);
 }
 
 .photoBanquiere{
     width: 100%;
 }
 .photoGrammont{
-    width: 100%;
+    height: 240px;
 }
 .imgCouple{
-    width: 100%;
+    width: 70%;
 }
 hr.vert{
     width : 1px;
@@ -214,6 +221,8 @@ hr.vert{
         box-shadow: 0px 0px 7px rgba(0,0,0,0.028), 0px 1px 1px rgba(255,255,255,0.24) inset;
         background-color: #00d6b2;
         padding-top: 20px;
+        background-color: rgba(74, 183, 194, 1);
+        color: white;
     }
     .count-label-w{
         font-family:'Lobster', cursive;
@@ -261,28 +270,26 @@ hr.vert{
 
 }
 .train .row{
-
     margin-left: 25px;
     margin-right: 25px;
 }
 .train .title{
-    font-family:'Lobster', cursive;
-    font-size: 40px;
+    font-size: 28px;
 }
-.train .title2{
-    font-family:'Lobster', cursive;
-    font-size: 30px;
-}
-.train .body{
+.train .title-{
     font-size: 20px;
 }
+.train .title2{
+    font-size: 18px;
+}
+.train .body{
+    font-size: 14px;
+}
 .train span.departure{
-    font-size: 25px;
     font-weight: bold;
 }
 .train .firstIn{
-    margin-top: 40px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -298,6 +305,13 @@ hr.vert{
 .glyph .glyph-icon:before{
     font-size: 64px;
 }
+.glyph .glyph-icon{
+    color:  rgba(74, 183, 194, 1);;
+}
+.title3{
+    font-weight: bold;
+}
+
 
 
 

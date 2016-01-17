@@ -7,9 +7,14 @@
         <br>
         <div>
              <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-                 <ui-gmap-marker  coords="marker.coords" icon="marker.icon" idkey="marker.id"></ui-gmap-marker>
+                 <ui-gmap-marker  coords="marker.coords" icon="marker.icon" idkey="marker.id">
+                     <ui-gmap-window show="true">
+                         <div>{{marker.options.labelContent}}</div>
+                     </ui-gmap-window>
+                 </ui-gmap-marker>
              </ui-gmap-google-map>
         </div>
+
 
         <div class="col-xs-12 col-md-12">
             <span class="title2">La Cérémonie Civile</span>

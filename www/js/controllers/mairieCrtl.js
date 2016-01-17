@@ -2,16 +2,16 @@
  * Created by kamel on 31/12/2015.
  */
 
-angular.module('routerApp').controller('mairieCtrl', function ($scope, $log, $timeout) {
+angular.module('routerApp.controller').controller('mairieCtrl', function ($scope, $log, $timeout) {
 
     $scope.adresse1 = "Chateau de Grammont, 2733 Avenue Albert Einstein, 34000 Montpellier";
     $scope.adresse2 = "Domaine de la Banquière, Chemin de la Banquière, 34130 Mauguio";
     $scope.title = "Title";
     $scope.content = "The Body Content";
 
-    $scope.map = {center: {latitude: 43.615735, longitude:  3.930256 }, zoom: 18 };
+    $scope.map = {center: {latitude: 43.6140, longitude:  3.930256 }, zoom: 15 };
 
-    $scope.options = {scrollwheel: false};
+    $scope.options = {scrollwheel: false, labelContent:"Mairie"};
     $scope.coordsUpdates = 0;
     $scope.dynamicMoveCtr = 0;
     $scope.marker = {

@@ -53,6 +53,20 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
             url: '/programme',
             templateUrl: '/templates/programme.html'
         })
+        .state('dormir', {
+            url: '/dormir',
+            templateUrl: '/templates/dormir.html',
+            controller: "dormirCtrl"
+        })
+        .state('liensUtils', {
+            url: '/liensUtils',
+            templateUrl: '/templates/liensUtils.html'
+        })
+        .state('contact', {
+            url: '/contact',
+            templateUrl: '/templates/contact.html',
+            controller: "contactCtrl"
+        })
 
 
         
