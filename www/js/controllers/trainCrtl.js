@@ -9,8 +9,9 @@ angular.module('routerApp.controller')
         // creating a blank object to hold our form information.
         //$scope will allow this to pass between controller and view
         $scope.formData = {};
-        $scope.formData.depart="Non";
-        $scope.formData.retour="Non";
+        $scope.formData.depart="Vendredi 3 juin à 12h07";
+        $scope.formData.retour="Dimanche 5 juin à 16h23";
+        $scope.formData.nbr = 1;
 
         // submission message doesn't show when page loads
         $scope.submission = false;
