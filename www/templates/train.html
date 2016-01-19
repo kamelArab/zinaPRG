@@ -43,25 +43,25 @@
 
     <form ng-submit="submitFormTrain()" name="contactform" method="post" action="" class="form-horizontal" role="form">
         <div class="form-group" ng-class="{ 'has-error': formData.nom.$invalid && submitted }">
-            <label for="inputName" class="col-lg-2 control-label">Nom</label>
+            <label for="inputName" class="col-sm-2 control-label">Nom</label>
             <div class="col-sm-5">
                 <input ng-model="formData.nom" type="text" class="form-control" id="inputName" name="inputName" placeholder="Nom" required>
             </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error': formData.prenom.$invalid && submitted }">
-            <label for="inputLastname" class="col-lg-2 control-label">Prénom</label>
+            <label for="inputLastname" class="col-sm-2 control-label">Prénom</label>
             <div class="col-sm-5">
                 <input ng-model="formData.prenom" type="text" class="form-control" id="inputLastname" name="inputLastname" placeholder="Prenom" required>
             </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
-            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-5">
                 <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
             </div>
         </div>
         <div class="form-group selct">
-            <label for="inputEmail3" class="col-lg-2 control-label">Depart</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Depart</label>
             <div class="col-sm-5">
                 <select class="form-control"  ng-model="formData.depart">
                     <option value="Vendredi 3 juin à 12h07">Vendredi 3 juin à 12h07</option>

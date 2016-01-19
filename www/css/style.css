@@ -308,8 +308,27 @@ hr.vert{
 .glyph .glyph-icon{
     color:  rgba(74, 183, 194, 1);;
 }
+.title2{
+    font-size: 18px;
+}
 .title3{
     font-weight: bold;
+}
+.util  .glyph-icon:before{
+    font-size: 64px;
+}
+.util article{
+    margin-top: 10px;
+    border: solid 1px rgba(74, 183, 194, 1);
+    height: 300px;
+}
+.hotel article{
+    margin-top: 10px;
+    border: solid 1px rgba(74, 183, 194, 1);
+    height: 350px;
+}
+ul.noPuce{
+    list-style-type: none;
 }
 
 
