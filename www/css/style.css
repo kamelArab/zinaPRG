@@ -64,7 +64,7 @@ footer{
     width: 860px;
 }
 .title{
-    font-size: 24px ;
+    font-size: 28px ;
 }
 body{
     font-family: centaur, Helvetica, Arial, sans-serif;
@@ -306,7 +306,7 @@ hr.vert{
     font-size: 64px;
 }
 .glyph .glyph-icon{
-    color:  rgba(74, 183, 194, 1);;
+    color:  rgba(74, 183, 194, 1);
 }
 .title2{
     font-size: 18px;
@@ -328,8 +328,28 @@ hr.vert{
     height: 350px;
 }
 ul.noPuce{
-    list-style-type: none;
+     list-style-type: none;
+     padding-left: 10px;
+ }
+ul.noPuce span{
+    padding-right: 10px;
 }
+ul.noPuce i:before{
+    margin-left: 0px;
+}
+ul.noPuce .row{
+    margin-left: 0px;
+}
+.degrader{
+    background-image: -webkit-linear-gradient(top  , #4ab7c2 0%, #E0F3F4 100%);
+    background-image:    -moz-linear-gradient(top , #4ab7c2 0%, #E0F3F4 100%);
+    background-image:     -ms-linear-gradient(top , #4ab7c2 0%, #E0F3F4 100%);
+    background-image:      -o-linear-gradient(top , #4ab7c2 0%, #E0F3F4 100%);
+    background-image:         linear-gradient(top , #4ab7c2 0%, #E0F3F4 100%);
+}
+
+
+
 
 
 
