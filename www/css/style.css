@@ -29,13 +29,19 @@
 }
 header,footer {
 width: 100%;
-    height: 200px;
+    height: 150px;
     background: #ffffff;
     position:fixed;
     color:#000;
     text-align:center;
     max-width: 860px;
     z-index: 999;
+}
+header .container-fluid{
+    background-color: white;
+}
+header nav{
+    border: none;
 }
 footer{
     height: 50px;
@@ -54,7 +60,7 @@ footer{
 
 }
 #container{
-    margin-top: 200px;
+    margin-top: 150px;
     margin-bottom: 100px;
 }
 .contener{
@@ -259,9 +265,7 @@ hr.vert{
     margin-bottom: 80px;
 }
 .jeviens form label , .train form label{
-
-    font-size: 18px;
-
+    font-size: 14px;
 }
 .jeviens form input, .train form input{
 
@@ -346,6 +350,11 @@ ul.noPuce .row{
     background-image:     -ms-linear-gradient(top , #4ab7c2 0%, #E0F3F4 100%);
     background-image:      -o-linear-gradient(top , #4ab7c2 0%, #E0F3F4 100%);
     background-image:         linear-gradient(top , #4ab7c2 0%, #E0F3F4 100%);
+}
+ul li.menuLi{
+    height: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 

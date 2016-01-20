@@ -36,7 +36,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
                 <ul class="nav navbar-nav" ng-init="menuNav = 1">
-                    <li class="dropdown">
+                    <li class="dropdown menuLi">
                         <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Comment venir ? <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li ng-class="{active: menuNav==5,}" ng-click="menuNav = 5;"><a ui-sref="trains">Billets de train</a></li>
@@ -47,12 +47,12 @@
                             <li ng-class="{active: menuNav==8,}" ng-click="menuNav = 8;"><a ui-sref="brunch">Le Brunch</a></li>
                         </ul>
                     </li>
-                    <li ng-class="{active: menuNav==9,}" ng-click="menuNav = 9;"><a ui-sref="programme">Au programme ?</a></li>
-                    <li ng-class="{active: menuNav==10,}" ng-click="menuNav = 10;"><a ui-sref="dormir">Ou dormir ?</a></li>
-                    <li ><a ui-sref="home"><img src="./img/logo-final.png" style="width: 96px; height: 96px;"/></a></li>
-                    <li ng-class="{active: menuNav==6,}" ng-click="menuNav = 6;" style="float: right"><a ui-sref="cadeau">Cadeau</a></li>
-                    <li ng-class="{active: menuNav==11,}" ng-click="menuNav = 11;"  style="float: right"><a ui-sref="liensUtils">Liens utiles</a></li>
-                    <li ng-class="{active: menuNav==7,}" ng-click="menuNav = 7;"  style="float: right"><a ui-sref="contact">Contact</a></li>
+                    <li ng-class="{active: menuNav==9,}" ng-click="menuNav = 9;" class="menuLi"><a ui-sref="programme">Au programme ?</a></li>
+                    <li ng-class="{active: menuNav==10,}" ng-click="menuNav = 10;" class="menuLi"><a ui-sref="dormir">Ou dormir ?</a></li>
+                    <li ><a ui-sref="home"><img src="./img/logo-final.png" style="width: 50px; height: 50px;"/></a></li>
+                    <li ng-class="{active: menuNav==7,}" ng-click="menuNav = 7;"  class="menuLi" style="float: right"><a ui-sref="contact">Contact</a></li>
+                    <li ng-class="{active: menuNav==11,}" ng-click="menuNav = 11;" class="menuLi" style="float: right"><a ui-sref="liensUtils">Liens utiles</a></li>
+                    <li ng-class="{active: menuNav==6,}" ng-click="menuNav = 6;" class="menuLi" style="float: right"><a ui-sref="cadeau">Cadeau</a></li>
                 </ul>
 
             </div><!--/.nav-collapse -->

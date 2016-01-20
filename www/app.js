@@ -96,6 +96,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
         if($stateParams.scrollTo){
             $location.hash($stateParams.scrollTo);
             $anchorScroll();
+        }else{
+            $anchorScroll();
         }
     });
 });
