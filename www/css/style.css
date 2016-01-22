@@ -38,9 +38,10 @@ width: 100%;
     position:fixed;
     color:#000;
     text-align:center;
-    max-width: 860px;
+    max-width: 1024px;
     z-index: 999;
 }
+/* ------------------HEADER----------------------*/
 header .container-fluid{
     background-color: white;
 }
@@ -57,12 +58,42 @@ footer{
     bottom:0px;
     margin-top:100px;
 }
+
+@media screen and (max-width: 768px){
+    #logo{
+        display: none;
+    }
+
+}
+
+
 #header-wrap {
     position: fixed;
     top: 0;
     width: 100%;
 
 }
+.menuLi{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+@media (min-width: 768px){
+    .navbar-nav>li>a {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+}*
+.menuLi a{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+ul.nav.navbar-nav.col-md-5.row{
+    padding-right: 0px;
+}
+
+/* ------------------END HEADER----------------------*/
 #container{
     margin-top: 153px;
     margin-bottom: 150px;
@@ -72,7 +103,7 @@ footer{
     height: 100%;
     padding-top: 20px;
     padding-bottom: 50px;
-    width: 860px;
+    max-width: 1024px;
 }
 .title{
     font-size: 28px ;
@@ -356,11 +387,7 @@ ul.noPuce .row{
     background-image:      -o-linear-gradient(top , #4ab7c2 0%, #E0F3F4 100%);
     background-image:         linear-gradient(top , #4ab7c2 0%, #E0F3F4 100%);
 }
-ul li.menuLi{
-    height: 100%;
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
+
 .endPage{
     margin-bottom: 50px;
 }
