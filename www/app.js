@@ -62,6 +62,14 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
             url: '/liensUtils',
             templateUrl: '/templates/liensUtils.html'
         })
+        .state('navette', {
+            url: '/navette',
+            templateUrl: '/templates/navette.html'
+        })
+        .state('hotels', {
+            url: '/hotels',
+            templateUrl: '/templates/hotels.html'
+        })
         .state('contact', {
             url: '/contact',
             templateUrl: '/templates/contact.html',
