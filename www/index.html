@@ -20,11 +20,11 @@
 </head>
 
 <!-- apply our angular app to our site -->
-<body ng-app="routerApp">
+<body ng-app="routerApp" ng-controller="indexCtrl">
 <div class="contener index body" >
-
+    <span ng-click="showSuccess=!showSuccess;">showSuccess:{{showSuccess}}</span>
     <header  class="pos">
-
+    <span ng-click="showSuccess=!showSuccess;">showSuccess:{{showSuccess}}</span>
         <nav class="navbar navbar-default" style="margin-bottom:0px">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -72,6 +72,12 @@
         </div><!--/.container-fluid -->
     </nav>
         <hr style="margin-top: 0px;margin-bottom: 20px;border-width:3px;">
+        <div class="alert alert-success" ng-show="showSuccess" class="alertLink" ng-style="{active:showSuccess}" role="alert" style="margin-top: -20px">
+            <a href="#"  class="alert-link">{{messageSuccess}} KAMEL IS THE BEST</a>
+        </div>
+        <div class="alert alert-success" ng-show="show-error" class="alertLink" ng-style="{active:show-error}" role="alert">
+            <a href="#"  class="alert-link">{{messageError}}</a>
+        </div>
     </header>
 
     <div id="container" ui-view>
@@ -90,11 +96,12 @@
 <!-- Angular Material Library -->
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 
-    <script src='./lib/lodash/lodash.min.js'></script>
+    <script src='./lib/lodash/dist/lodash.min.js'></script>
     <script src='./lib/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.2.1/angular-google-maps.min.js"></script>
 
     <script src="app.js"></script>
+<script src="./js/controllers/index.js"></script>
 <script src="./js/controllers/homeCrtl.js"></script>
     <script src="./js/controllers/mairieCrtl.js"></script>
 <script src="./js/controllers/receptionCrtl.js"></script>
