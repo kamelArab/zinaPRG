@@ -43,20 +43,20 @@
     </p>
     </div>
 
-    <form ng-submit="submitFormTrain()" name="contactform" method="post" action="" class="form-horizontal" role="form">
-        <div class="form-group" ng-class="{ 'has-error': formData.nom.$invalid && submitted }">
+    <form name="contactform" method="post" action="" class="form-horizontal" role="form">
+        <div class="form-group" ng-class="{ 'has-error': formData.nom.$invalid && testSubmit}">
             <label for="inputName" class="col-sm-2 control-label">Nom</label>
             <div class="col-sm-5">
-                <input ng-model="formData.nom" type="text" class="form-control" id="inputName" name="inputName" placeholder="Nom" required>
+                <input ng-model="formData.nom" type="text" class="form-control" id="inputName" name="inputName" placeholder="Nom" ng-required="true" required>
             </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': formData.prenom.$invalid && submitted }">
+        <div class="form-group" ng-class="{ 'has-error': formData.prenom.$invalid && testSubmit }">
             <label for="inputLastname" class="col-sm-2 control-label">Prénom</label>
             <div class="col-sm-5">
                 <input ng-model="formData.prenom" type="text" class="form-control" id="inputLastname" name="inputLastname" placeholder="Prenom" required>
             </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
+        <div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && testSubmit }">
             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-5">
                 <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
@@ -90,7 +90,7 @@
 
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-                <button type="submit" class="btn btn-primary btn-lg"  ng-disabled="submitButtonDisabled">Envoyer</button>
+                <button type="button" ng-click="submitFormTrain()" class="btn btn-primary btn-lg"  ng-disabled="submitButtonDisabled">Envoyer</button>
             </div>
         </div>
     </form>

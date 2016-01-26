@@ -84,7 +84,7 @@ footer{
         padding-left: 0px;
     }
 
-}*
+}
 .menuLi a{
     padding-right: 0px;
     padding-left: 0px;
@@ -93,6 +93,29 @@ footer{
 ul.nav.navbar-nav.col-md-5.row, ul.nav.navbar-nav.col-sm-5.row{
     padding-right: 0px;
 }
+.alert.alert-success{
+    width: 25%;
+    float: right;
+    display: none;
+    opacity: 0;
+    transition:all 1s ease;
+}
+.alert.alert-success.active{
+    display: block;
+    opacity: 1;
+}
+.alert.alert-danger{
+    width: 25%;
+    float: right;
+    display: none;
+    opacity: 0;
+    transition:all 1s ease;
+}
+.alert.alert-danger.active{
+    display: block;
+    opacity: 1;
+}
+
 
 /* ------------------END HEADER----------------------*/
 #container{
@@ -394,6 +417,11 @@ ul.noPuce .row{
 .endPage{
     margin-bottom: 50px;
 }
+.has-error .form-control{
+    border-color: red;
+    color: red;
+}
+
 
 
 

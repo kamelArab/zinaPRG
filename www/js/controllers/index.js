@@ -3,6 +3,27 @@
  */
 
 angular.module('routerApp.controller')
-    .controller('indexCtrl',['$scope',function($scope){
+    .controller('indexCtrl',['$scope','$timeout',function($scope,$timeout){
         $scope.showSuccess=false;
+        $scope.showError=false;
+        $scope.messageSuccess = "";
+        $scope.messageError="";
+        $scope.$on('successMail', function(event, mass) {
+            $scope.showSuccess =true;
+            $scope.messageSuccess = mass;
+            $timeout(function() {
+                $scope.messageSuccess = "";
+                $scope.showError=false;
+                $scope.showSuccess = false;
+            }, 3000);
+            console.log(mass); });
+        $scope.$on('errorMail', function(event, mass) {
+            $scope.showError =true;
+            $scope.messageSuccess = mass;
+            $timeout(function() {
+                $scope.messageError = "";
+                $scope.showError=false;
+                $scope.showError = false;
+            }, 3000);
+            console.log(mass); });
     }]);
