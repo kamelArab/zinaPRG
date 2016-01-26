@@ -44,19 +44,19 @@
     </div>
 
     <form name="contactform" method="post" action="" class="form-horizontal" role="form">
-        <div class="form-group" ng-class="{ 'has-error': formData.nom.$invalid && testSubmit}">
+        <div class="form-group" ng-class="{ 'has-error': showError(formData.nom) && testSubmit}">
             <label for="inputName" class="col-sm-2 control-label">Nom</label>
             <div class="col-sm-5">
-                <input ng-model="formData.nom" type="text" class="form-control" id="inputName" name="inputName" placeholder="Nom" ng-required="true" required>
+                <input ng-model="formData.nom" type="text" class="form-control" id="inputName" name="inputName" ng-change="initError(formData.nom)" placeholder="Nom" ng-required="true" required>
             </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': formData.prenom.$invalid && testSubmit }">
+        <div class="form-group" ng-class="{ 'has-error': showError(formData.prenom) && testSubmit }">
             <label for="inputLastname" class="col-sm-2 control-label">Prénom</label>
             <div class="col-sm-5">
-                <input ng-model="formData.prenom" type="text" class="form-control" id="inputLastname" name="inputLastname" placeholder="Prenom" required>
+                <input ng-model="formData.prenom" type="text" class="form-control" id="inputLastname" name="inputLastname" placeholder="Prenom" ng-change="initError(formData.prenom)" required>
             </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && testSubmit }">
+        <div class="form-group" ng-class="{ 'has-error': showError(formData.inputEmail) && testSubmit }">
             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-5">
                 <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>

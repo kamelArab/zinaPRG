@@ -15,15 +15,15 @@ angular.module('routerApp.controller')
                 $scope.messageSuccess = "";
                 $scope.showError=false;
                 $scope.showSuccess = false;
-            }, 3000);
+            }, 10000);
             console.log(mass); });
         $scope.$on('errorMail', function(event, mass) {
             $scope.showError =true;
-            $scope.messageSuccess = mass;
+            $scope.messageError = mass;
             $timeout(function() {
                 $scope.messageError = "";
                 $scope.showError=false;
                 $scope.showError = false;
-            }, 3000);
+            }, 10000);
             console.log(mass); });
     }]);

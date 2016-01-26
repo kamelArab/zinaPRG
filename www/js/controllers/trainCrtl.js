@@ -12,7 +12,7 @@ angular.module('routerApp.controller')
         $scope.formData.depart="Vendredi 3 juin à 12h07";
         $scope.formData.retour="Dimanche 5 juin à 16h23";
         $scope.formData.nbr = 1;
-
+        $scope.errors = [];
         // submission message doesn't show when page loads
         $scope.submission = false;
         // Updated code thanks to Yotam
@@ -25,9 +25,57 @@ angular.module('routerApp.controller')
             // Remove last ampersand and return
             return returnString.slice( 0, returnString.length - 1 );
         };
+
+        $scope.showError = function(text){
+            for(var i in $scope.errors){
+                if($scope.errors[i] == text){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        $scope.initError= function(text){
+            for(var i in $scope.errors){
+                if($scope.errors[i] == text){
+                    $scope.errors.splice(i);
+                }
+            }
+        }
         $scope.submitFormTrain = function() {
 
             $scope.submitButtonDisabled = true;
+
+            if(angular.isUndefined($scope.formData.nom) || $scope.formData.nom.$invalid){
+                $scope.errors.push("nom")
+            }
+            if(angular.isUndefined($scope.formData.prenom) || $scope.formData.prenom.$invalid){
+                $scope.errors.push("prenom");
+            }
+            if(angular.isUndefined($scope.formData.inputEmail) || $scope.formData.inputEmail.$invalid){
+                $scope.errors.push("email");
+            }
+            if($scope.formData.nbr <=0){
+                $scope.errors.push("nbr");
+            }
+
+            if($scope.errors.length >0){
+
+                var messageError = "Les champs ";
+                if($scope.errors.length == 1){
+                    messageError = "Le champ ";
+                }
+                for(var i in $scope.errors){
+                    messageError += $scope.errors[i]+", "
+                }
+
+                messageError = messageError.substring(0,messageError.length - 2);
+
+                $scope.$emit("errorMail",messageError);
+
+                return;
+
+            }
 
 
 
