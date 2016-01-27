@@ -13,6 +13,7 @@ angular.module('routerApp.controller')
         $scope.formData.retour="Dimanche 5 juin à 16h23";
         $scope.formData.nbr = 1;
         $scope.errors = [];
+        $scope.testSubmit = false;
         // submission message doesn't show when page loads
         $scope.submission = false;
         // Updated code thanks to Yotam
@@ -38,13 +39,14 @@ angular.module('routerApp.controller')
         $scope.initError= function(text){
             for(var i in $scope.errors){
                 if($scope.errors[i] == text){
-                    $scope.errors.splice(i);
+                    $scope.errors.splice(i,1);
                 }
             }
         }
         $scope.submitFormTrain = function() {
 
             $scope.submitButtonDisabled = true;
+            $scope.testSubmit = true;
 
             if(angular.isUndefined($scope.formData.nom) || $scope.formData.nom.$invalid){
                 $scope.errors.push("nom")
@@ -73,6 +75,7 @@ angular.module('routerApp.controller')
 
                 $scope.$emit("errorMail",messageError);
 
+                $scope.submitButtonDisabled = false;
                 return;
 
             }

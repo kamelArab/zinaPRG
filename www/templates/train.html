@@ -13,7 +13,7 @@
 
             mais surtout parce que nous tenons beaucoup à ce que vous soyez tous parmi nous, grâce à
 
-            notre cher ami Riadh (Mr SNCF) nous avons pu vous réserver 40 billets de train aller-retour
+            notre cher ami Riadh (Mr SNCF) nous avons pu vous réserver 40 billets de train aller-retour pour
 
             Paris-Gare de Lyon/Montpellier au tarif unitaire de 20 à 40 euros et uniquement pour les dates suivantes :
         </p>
@@ -44,19 +44,20 @@
     </div>
 
     <form name="contactform" method="post" action="" class="form-horizontal" role="form">
-        <div class="form-group" ng-class="{ 'has-error': showError(formData.nom) && testSubmit}">
+        showError(formData.nom) = {{showError(formData.nom)}} // testSubmit = {{testSubmit}}
+        <div class="form-group" ng-class="{ 'has-error': showError('nom') && testSubmit}">
             <label for="inputName" class="col-sm-2 control-label">Nom</label>
             <div class="col-sm-5">
-                <input ng-model="formData.nom" type="text" class="form-control" id="inputName" name="inputName" ng-change="initError(formData.nom)" placeholder="Nom" ng-required="true" required>
+                <input ng-model="formData.nom" type="text" class="form-control" id="inputName" name="inputName" ng-change="initError('nom')" placeholder="Nom" ng-required="true" required>
             </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': showError(formData.prenom) && testSubmit }">
+        <div class="form-group" ng-class="{ 'has-error': showError('prenom') && testSubmit }">
             <label for="inputLastname" class="col-sm-2 control-label">Prénom</label>
             <div class="col-sm-5">
-                <input ng-model="formData.prenom" type="text" class="form-control" id="inputLastname" name="inputLastname" placeholder="Prenom" ng-change="initError(formData.prenom)" required>
+                <input ng-model="formData.prenom" type="text" class="form-control" id="inputLastname" name="inputLastname" placeholder="Prenom" ng-change="initError('prenom')" required>
             </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': showError(formData.inputEmail) && testSubmit }">
+        <div class="form-group" ng-class="{ 'has-error': showError('mail') && testSubmit }">
             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-5">
                 <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
@@ -82,7 +83,7 @@
             </div>
         </div>
         <div class="form-group nbselct">
-            <label for="inputEmail3" class="col-sm-2 control-label">Nombres de place</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Nombre de place</label>
             <div class="col-sm-2">
                 <input ng-model="formData.nbr" type="number" class="form-control" id="inputEmail3"  step="1" value="1" min="1" max="5">
             </div>
