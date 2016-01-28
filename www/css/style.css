@@ -38,7 +38,7 @@ width: 100%;
     position:fixed;
     color:#000;
     text-align:center;
-    max-width: 1024px;
+    max-width: 1025px;
     z-index: 999;
     padding-right: 20px;
 }
@@ -234,6 +234,9 @@ nav.navbar.navbar-default {
     margin-top: 20px;
     font-size: 22px ;
     margin-bottom: 25px;
+}
+.home .where .body .row .ceremoniLabel .textLink{
+    font-size: 16px;
 }
 
 .home .countDown .title{

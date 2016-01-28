@@ -19,7 +19,22 @@ angular.module('routerApp.controller').controller('contactCrtl', function ($scop
         // Remove last ampersand and return
         return returnString.slice( 0, returnString.length - 1 );
     };
+
+    $scope.errors=[];
+    var validForm = function(){
+
+        
+
+
+
+    }
+
     $scope.submitForm = function() {
+
+        if(!validForm()){
+            return;
+        }
+
         $scope.submitButtonDisabled = true;
         $http({
             method : 'POST',

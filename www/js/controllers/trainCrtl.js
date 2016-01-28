@@ -5,7 +5,7 @@
  * Created by kamel on 10/01/2016.
  */
 angular.module('routerApp.controller')
-    .controller('trainCtrl',['$scope','$http','$filter','$timeout',function($scope, $http,$filter,$timeout){
+    .controller('trainCtrl',['$scope','$http','$filter',function($scope, $http,$filter){
         // creating a blank object to hold our form information.
         //$scope will allow this to pass between controller and view
         $scope.formData = {};
@@ -14,6 +14,16 @@ angular.module('routerApp.controller')
         $scope.formData.nbr = 1;
         $scope.errors = [];
         $scope.testSubmit = false;
+        var initFormData = function(){
+            $scope.formData = {};
+            $scope.formData.depart="Vendredi 3 juin à 12h07";
+            $scope.formData.retour="Dimanche 5 juin à 16h23";
+            $scope.formData.nbr = 1;
+            $scope.errors = [];
+            $scope.testSubmit = false;
+        }
+
+
         // submission message doesn't show when page loads
         $scope.submission = false;
         // Updated code thanks to Yotam
@@ -42,7 +52,9 @@ angular.module('routerApp.controller')
                     $scope.errors.splice(i,1);
                 }
             }
+            $scope.submitButtonDisabled = false;
         }
+        var EMAIL_REGEXP = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
         $scope.submitFormTrain = function() {
 
             $scope.submitButtonDisabled = true;
@@ -54,7 +66,7 @@ angular.module('routerApp.controller')
             if(angular.isUndefined($scope.formData.prenom) || $scope.formData.prenom.$invalid){
                 $scope.errors.push("prenom");
             }
-            if(angular.isUndefined($scope.formData.inputEmail) || $scope.formData.inputEmail.$invalid){
+            if(angular.isUndefined($scope.formData.inputEmail) || $scope.formData.inputEmail.$invalid || EMAIL_REGEXP.test($scope.formData.inputEmail)){
                 $scope.errors.push("email");
             }
             if($scope.formData.nbr <=0){
@@ -75,9 +87,7 @@ angular.module('routerApp.controller')
 
                 $scope.$emit("errorMail",messageError);
 
-                $scope.submitButtonDisabled = false;
                 return;
-
             }
 
 
@@ -87,27 +97,31 @@ angular.module('routerApp.controller')
                 url : 'php/processTrain.php',
                 data : param($scope.formData), // pass in data as strings
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' } // set the headers so angular passing info as form data (not request payload)
-            })
-                .success(function(data) {
+            }).then(function success(data) {
                     if (!data.success) {
                         // if not successful, bind errors to error variables
-                        $scope.messageError = "Probleme lors de l'envoie du mail";
                         $scope.showSuccess = false;
                         $scope.showError=true;
-                        $scope.$emit("errorMail","TOTO freho ");
+                        $scope.$emit("errorMail","Probleme lors de l'envoie du mail");
+                        $scope.submitButtonDisabled = false;
 
 
                     } else {
                         // if successful, bind success message to message
-                        $scope.formData = {}; // form fields are emptied with this line
-                        $scope.messageSuccess = "Email envoyé";
+                         // form fields are emptied with this line
+                        initFormData();
                         $scope.showSuccess = true;
                         $scope.showError=false;
-                        $scope.$emit("successMail","TOTO");
-
+                        $scope.$emit("successMail","Email envoyé");
+                        $scope.submitButtonDisabled = false;
 
                     }
-                });
+                },
+                function onError(data){
+                    $scope.$emit("errorMail","Probleme lors de l'envoie du mail");
+                    $scope.submitButtonDisabled = false;
+                }
+            );
         };
 
         $scope.$watch("formData.nom", function (newValue) {

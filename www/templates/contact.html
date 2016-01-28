@@ -12,14 +12,34 @@
         <br><br>
     </div>
 
-    <form ng-submit="submit(contactform)" name="contactform" method="post" action="" class="form-horizontal " role="form">
+    <form  name="contactform" method="post" action="" class="form-horizontal " role="form">
+        <div class="form-group" ng-class="{ 'has-error': showError('nom') && testSubmit}">
+            <label for="inputName" class="col-sm-2 control-label">Nom</label>
+            <div class="col-sm-5">
+                <input ng-model="formData.nom" type="text" class="form-control" id="inputName" name="inputName" ng-change="initError('nom')" placeholder="Nom" ng-required="true" required>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': showError('prenom') && testSubmit }">
+            <label for="inputLastname" class="col-sm-2 control-label">Prénom</label>
+            <div class="col-sm-5">
+                <input ng-model="formData.prenom" type="text" class="form-control" id="inputLastname" name="inputLastname" placeholder="Prenom" ng-change="initError('prenom')" required>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': showError('email') && testSubmit }">
+            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-5">
+                <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" ng-change="initError('email')" required>
+            </div>
+        </div>
+
+
         <div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
             <label for="inputName" class="col-sm-2 control-label">Nom</label>
             <div class="col-sm-6">
                 <input ng-model="formData.inputName" type="text" class="form-control" id="inputName" name="inputName" placeholder="Nom" required>
             </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
+        <div class="form-group" ng-class="{ 'has-error': formData.inputEmail.$invalid && submitted }">
             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-6">
                 <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
