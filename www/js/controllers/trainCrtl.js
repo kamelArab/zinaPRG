@@ -66,7 +66,7 @@ angular.module('routerApp.controller')
             if(angular.isUndefined($scope.formData.prenom) || $scope.formData.prenom.$invalid){
                 $scope.errors.push("prenom");
             }
-            if(angular.isUndefined($scope.formData.inputEmail) || $scope.formData.inputEmail.$invalid || EMAIL_REGEXP.test($scope.formData.inputEmail)){
+            if(angular.isUndefined($scope.formData.email) || $scope.formData.email.$invalid || !EMAIL_REGEXP.test($scope.formData.email)){
                 $scope.errors.push("email");
             }
             if($scope.formData.nbr <=0){
@@ -85,6 +85,12 @@ angular.module('routerApp.controller')
 
                 messageError = messageError.substring(0,messageError.length - 2);
 
+                if($scope.errors.length == 1){
+                    messageError += " est invalide"
+                }else{
+                    messageError += " sont invalides";
+                }
+
                 $scope.$emit("errorMail",messageError);
 
                 return;
@@ -98,10 +104,8 @@ angular.module('routerApp.controller')
                 data : param($scope.formData), // pass in data as strings
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' } // set the headers so angular passing info as form data (not request payload)
             }).then(function success(data) {
-                    if (!data.success) {
+                    if (!data.data.success) {
                         // if not successful, bind errors to error variables
-                        $scope.showSuccess = false;
-                        $scope.showError=true;
                         $scope.$emit("errorMail","Probleme lors de l'envoie du mail");
                         $scope.submitButtonDisabled = false;
 
@@ -110,8 +114,6 @@ angular.module('routerApp.controller')
                         // if successful, bind success message to message
                          // form fields are emptied with this line
                         initFormData();
-                        $scope.showSuccess = true;
-                        $scope.showError=false;
                         $scope.$emit("successMail","Email envoyé");
                         $scope.submitButtonDisabled = false;
 

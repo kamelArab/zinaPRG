@@ -18,7 +18,7 @@ if ( ! empty($errors)) {
   $data['success'] = true;
   $data['messageSuccess'] = 'Hey! Thanks for reaching out. I will get back to you soon';
   // CHANGE THE TWO LINES BELOW
-  $email_to = "postmaster@benzina2016.com,zina.djaiz@gmail.com";
+  $email_to = "postmaster@benzina2016.com,zina.djaiz@gmail.com,benjaminmampuya@gmail.com,kamel.arab@gmail.com";
 
   $nom = $_POST['nom']; // required
   $prenom = $_POST['prenom'];
@@ -65,10 +65,8 @@ if ( ! empty($errors)) {
   $headers  = 'MIME-Version: 1.0' . "\r\n";
   $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
   // En-têtes additionnels
-  $headers .= 'To: Mariage <postmaster@benzina2016.com>, Zina Djaïz <zina.djaiz@gmail.com>' . "\r\n";
+  $headers .= 'To: Mariage <postmaster@benzina2016.com>, Zina Djaïz <zina.djaiz@gmail.com>, Benjamin Mampuya<benjaminmampuya@gmail.com>' . "\r\n";
   $headers .= 'From: '.$email_from.'\r\n';
-  $headers .= 'Cc: anniversaire_archive@example.com' . "\r\n";
-  $headers .= 'Bcc: kamel.arab@gmail.com' . "\r\n";
   $headers .='Reply-To: '.$email_from."rn" .
       'X-Mailer: PHP/' . phpversion();
   @mail($email_to, $email_subject, $message, $headers);

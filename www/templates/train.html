@@ -44,7 +44,6 @@
     </div>
 
     <form name="contactform" method="post" action="" class="form-horizontal" role="form">
-        showError(formData.nom) = {{showError(formData.nom)}} // testSubmit = {{testSubmit}}
         <div class="form-group" ng-class="{ 'has-error': showError('nom') && testSubmit}">
             <label for="inputName" class="col-sm-2 control-label">Nom</label>
             <div class="col-sm-5">
@@ -58,9 +57,9 @@
             </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error': showError('email') && testSubmit }">
-            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+            <label for="email" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-5">
-                <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" ng-change="initError('email')" required>
+                <input ng-model="formData.email" type="email" class="form-control" id="email" name="email" placeholder="Email" ng-change="initError('email')" required>
             </div>
         </div>
         <div class="form-group selct" >
