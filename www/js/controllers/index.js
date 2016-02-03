@@ -26,4 +26,16 @@ angular.module('routerApp.controller')
                 $scope.showError = false;
             }, 10000);
             console.log(mass); });
+        $scope.test=function(){
+            $scope.$emit("successMail","Email envoyé");
+        }
+        $scope.closeMobileMenu = function() {
+
+            var element2 = $('.navbar-toggle');
+            if(element2.css("display") == "block"){
+                element2.click();
+            }
+
+        }
     }]);
+

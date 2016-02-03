@@ -63,7 +63,7 @@ if ( ! empty($errors)) {
       </body>
      </html>";
   $headers  = 'MIME-Version: 1.0' . "\r\n";
-  $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+  $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
   // En-têtes additionnels
   $headers .= 'To: Mariage <postmaster@benzina2016.com>, Zina Djaïz <zina.djaiz@gmail.com>, Benjamin Mampuya<benjaminmampuya@gmail.com>' . "\r\n";
   $headers .= 'From: '.$email_from.'\r\n';

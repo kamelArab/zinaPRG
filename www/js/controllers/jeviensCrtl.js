@@ -10,6 +10,7 @@ angular.module('routerApp.controller')
         $scope.formData.receptionStr="true";
         $scope.formData.brunch=true;
         $scope.formData.brunchStr="true";
+        $scope.errors=[];
         // submission message doesn't show when page loads
         $scope.submission = false;
         // Updated code thanks to Yotam
@@ -22,48 +23,110 @@ angular.module('routerApp.controller')
             // Remove last ampersand and return
             return returnString.slice( 0, returnString.length - 1 );
         };
+
+        $scope.showError = function(text){
+            for(var i in $scope.errors){
+                if($scope.errors[i] == text){
+                    return true;
+                }
+            }
+            return false;
+        }
+        $scope.initError= function(text){
+            for(var i in $scope.errors){
+                if($scope.errors[i] == text){
+                    $scope.errors.splice(i,1);
+                }
+            }
+            if($scope.errors.length == 0)
+            $scope.submitButtonDisabled = false;
+        }
+
+        var initFormData = function(){
+            $scope.formData = {};
+            $scope.formData.reception=true;
+            $scope.formData.receptionStr="true";
+            $scope.formData.brunch=true;
+            $scope.formData.brunchStr="true";
+            $scope.errors=[];
+        };
+
         $scope.submitForm = function() {
+            $scope.submitButtonDisabled = true;
+            $scope.testSubmit = true;
+
+            var EMAIL_REGEXP = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+
+            if(angular.isUndefined($scope.formData.nom) || $scope.formData.nom.$invalid || $scope.formData.nom.trim() == ""){
+                $scope.errors.push("nom")
+            }
+            if(angular.isUndefined($scope.formData.prenom) || $scope.formData.prenom.$invalid || $scope.formData.prenom.trim() == ""){
+                $scope.errors.push("prenom");
+            }
+            if(angular.isUndefined($scope.formData.email) || $scope.formData.email.$invalid || !EMAIL_REGEXP.test($scope.formData.email) || $scope.formData.email.trim() == ""){
+                $scope.errors.push("email");
+            }
+
+
+
+            if($scope.errors.length >0){
+
+                var messageError = "Les champs ";
+                if($scope.errors.length == 1){
+                    messageError = "Le champ ";
+                }
+                for(var i in $scope.errors){
+                    messageError += $scope.errors[i]+", "
+                }
+
+                messageError = messageError.substring(0,messageError.length - 2);
+
+                if($scope.errors.length == 1){
+                    messageError += " est invalide"
+                }else{
+                    messageError += " sont invalides";
+                }
+
+                $scope.$emit("errorMail",messageError);
+
+                return;
+            }
+
+
+
             $http({
                 method : 'POST',
                 url : 'php/process.php',
                 data : param($scope.formData), // pass in data as strings
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' } // set the headers so angular passing info as form data (not request payload)
-            })
-                .success(function(data) {
-                    if (!data.success) {
-                        // if not successful, bind errors to error variables
-                        $scope.errorName = data.errors.name;
-                        $scope.errorEmail = data.errors.email;
-                        $scope.errorTextarea = data.errors.message;
-                        $scope.submissionMessage = data.messageError;
-                        $scope.submission = true; //shows the error message
-                    } else {
-                        // if successful, bind success message to message
-                        $scope.submissionMessage = data.messageSuccess;
-                        $scope.formData = {}; // form fields are emptied with this line
-                        $scope.submission = true; //shows the success message
-                    }
-                });
+            }).then(function success(data){
+                if (!data.data.success) {
+                    // if not successful, bind errors to error variables
+                    $scope.showSuccess = false;
+                    $scope.showError=true;
+                    $scope.$emit("errorMail","Probleme lors de l'envoie du mail");
+                    $scope.submitButtonDisabled = false;
+                } else {
+                    // if successful, bind success message to message
+                    initFormData();
+                    $scope.showSuccess = true;
+                    $scope.formData = {};
+                    $scope.$emit("successMail","Email envoyé");
+                    $scope.submitButtonDisabled = false;
+
+
+                }
+            },function faillure(){
+                $scope.$emit("errorMail","Probleme lors de l'envoie du mail");
+                $scope.submitButtonDisabled = false;
+            });
         };
-        $scope.$watch("formData.receptionStr", function (newValue) {
-            if(newValue == "true"){
-                $scope.formData.reception=true;
-            }else{
-                $scope.formData.reception=false;
-            }
-        });
-        $scope.$watch("formData.brunchStr", function (newValue) {
-            if(newValue == "true"){
-                $scope.formData.brunch=true;
-            }else{
-                $scope.formData.brunch=false;
-            }
-        });
         $scope.$watch("formData.nom", function (newValue) {
             if(angular.isDefined(newValue)){
                 $scope.formData.nom = $filter('uppercase')( $scope.formData.nom);
             }
         });
+
 
 
     }])

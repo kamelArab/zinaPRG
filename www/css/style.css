@@ -185,9 +185,11 @@ nav.navbar.navbar-default {
 }
 
 .home .welcome{
-    background-color: #888;
+    background-image:url('../img/fondKraft.jpg');
+    background-repeat: round;
+
     padding: 15px 10px;
-    padding-top: 50px;
+    padding-top: 150px;
     color: white;
 }
 .home .welcome .title,.home .mission .title{
@@ -236,7 +238,7 @@ nav.navbar.navbar-default {
 }
 .home .where .body .row .ceremoniLabel{
     margin-top: 20px;
-    font-size: 22px ;
+    font-size: 20px ;
     margin-bottom: 25px;
 }
 .home .where .body .row .ceremoniLabel .textLink{
@@ -339,7 +341,8 @@ hr.vert{
 
 }
 .train{
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 30px;
 }
 .train .row{
     margin-left: 25px;
@@ -355,7 +358,8 @@ hr.vert{
     font-size: 22px;
 }
 .train .body{
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 30px;
 }
 .train span.departure{
     font-weight: bold;
@@ -366,7 +370,8 @@ hr.vert{
 }
 
 .train ul.departure li{
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 30px;
 }
 .train .hortrains{
     margin-left: 30px;
@@ -398,6 +403,7 @@ hr.vert{
     margin-top: 10px;
     border: solid 1px rgba(74, 183, 194, 1);
     height: 350px;
+    padding-top: 25px;
 }
 ul.noPuce{
      list-style-type: none;

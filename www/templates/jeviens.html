@@ -6,23 +6,23 @@
         <span class="title"><span class="title-">------------</span> Je viens <span class="title-">------------</span></span>
     </p>
     <br><br>
-    <form class="form-horizontal text-center" ng-submit="submitForm()"  novalidate>
-        <div class="form-group">
+    <form class="form-horizontal text-center" >
+        <div class="form-group" ng-class="{ 'has-error': showError('nom') && testSubmit}">
             <label for="inputEmail3" class="col-sm-2 control-label" >Nom</label>
             <div class="col-sm-5">
-                <input ng-model="formData.nom" type="text" class="form-control" id="inputEmail3" placeholder="Nom">
+                <input ng-model="formData.nom" type="text" class="form-control" id="inputEmail3" ng-change="initError('nom')" placeholder="Nom">
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error': showError('prenom') && testSubmit}">
             <label for="inputEmail3" class="col-sm-2 control-label">Prénom</label>
             <div class="col-sm-5">
-                <input ng-model="formData.prenom" type="text" class="form-control" id="inputEmail3" placeholder="Prénom">
+                <input ng-model="formData.prenom" type="text" class="form-control" ng-change="initError('prenom')" id="inputEmail3" placeholder="Prénom">
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error': showError('email') && testSubmit}">
             <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-5">
-                <input ng-model="formData.email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                <input ng-model="formData.email" type="email" class="form-control"  ng-change="initError('email')" placeholder="Email">
             </div>
         </div>
         <div class="form-group selct">
@@ -46,18 +46,22 @@
         <div class="form-group nbselct">
             <label for="inputEmail3" class="col-sm-5 control-label">Nombre d’adultes (personnes de plus de 12 ans)</label>
             <div class="col-sm-2">
-                <input ng-model="formData.adulte" type="number" class="form-control" id="inputEmail3" >
+                <input ng-model="formData.adulte" type="number" min="0" step="1" class="form-control" id="inputEmail3" >
             </div>
         </div>
         <div class="form-group nbselct">
             <label for="inputEmail3" class="col-sm-5 control-label">Nombres d’enfants (personnes de moins 12 ans)</label>
             <div class="col-sm-2">
-                <input ng-model="formData.enfant" type="number" class="form-control" id="inputEmail3" >
+                <input ng-model="formData.enfant" type="number" class="form-control" min="0" step="1" id="inputEmail3" >
             </div>
         </div>
-        <div class="form-group" style="float: right;padding-right: 40px;">
-            <button type="button" class="btn btn-primary btn-lg"  ng-click="submitForm()" >Valider</button>
-        </div>
+        <div class="form-group selct">
+
+                <div class="col-sm-offset-2 col-sm-10 col-lg-offset-2 col-lg-10" style="text-align: left">
+                    <button type="button" class="btn btn-primary btn-lg"  ng-click="submitForm()" ng-disabled="submitButtonDisabled">Envoyer</button>
+                </div>
+
+            </div>
     </form>
 
 </div>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- CSS (load material) -->
+    <link rel="icon"  href="favicon.ico" />
     <link rel="stylesheet" href="./lib/angular-material/angular-material.layouts.min.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <!-- CSS (load bootstrap) -->
@@ -9,9 +11,6 @@
     <style>
         .navbar { border-radius:0; }
     </style>
-    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="./css/icon/flaticon.css">
     <link rel="stylesheet" href="./css/style.css">
 
@@ -26,7 +25,7 @@
         <nav class="navbar navbar-default" style="margin-bottom:0px">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" id="logo2"  ui-sref="home"><img  style=" max-width: 50px;padding-top: -10px;margin-top: -13px;"  src="./img/logo.png"></a>
+                <a class="navbar-brand" id="logo2"  ui-sref="home"><img  style=" max-width: 50px;padding-top: -10px;margin-top: -13px;"  src="./img/Logo_ZD.png"></a>
 
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -38,35 +37,37 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse row" aria-expanded="false" style="height: 1px;">
                 <ul class="nav navbar-nav  col-md-6 col-sm-6 row" style="width: 45%;padding-top:23px">
-                    <li class="dropdown menuLi col-md-4 col-sm-4">
+                    <li class="dropdown menuLi col-md-4 col-sm-4" ng-class="{active: menuNav==1}">
                         <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Comment venir ?<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li ng-class="{active: menuNav==5,}" ng-click="menuNav = 5;"><a ui-sref="trains">Billets de train</a></li>
-                            <li ng-class="{active: menuNav==2,}" ng-click="menuNav = 2;"><a ui-sref="navette">La navette</a></li>
+                            <li  ng-click="menuNav = 1;closeMobileMenu();"><a ui-sref="jeviens">Confimer votre presence</a></li>
                             <li role="separator" class="divider"></li>
-                            <li ng-class="{active: menuNav==3,}" ng-click="menuNav = 3;"><a ui-sref="mairie">La Mairie</a></li>
-                            <li ng-class="{active: menuNav==4,}" ng-click="menuNav = 4;"><a ui-sref="reception">Le Domaine de la Banquiere</a></li>
-                            <li ng-class="{active: menuNav==8,}" ng-click="menuNav = 8;"><a ui-sref="brunch">Le Brunch</a></li>
+                            <li  ng-click="menuNav = 1;closeMobileMenu();"><a ui-sref="trains">Billets de train</a></li>
+                            <li  ng-click="menuNav = 1;closeMobileMenu();"><a ui-sref="navette">La navette</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li  ng-click="menuNav = 1;closeMobileMenu();"><a ui-sref="mairie">La Mairie</a></li>
+                            <li  ng-click="menuNav = 1;closeMobileMenu();"><a ui-sref="reception">Le Domaine de la Banquière</a></li>
+                            <li  ng-click="menuNav = 1;closeMobileMenu();"><a ui-sref="brunch">Le Brunch</a></li>
                         </ul>
                     </li>
-                    <li ng-class="{active: menuNav==9,}" ng-click="menuNav = 9;" class="menuLi col-md-4 col-sm-4"><a ui-sref="programme">Au programme ?</a></li>
-                    <li class="dropdown menuLi col-md-4 col-sm-4">
-                        <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ou dormir ?<span class="caret"></span></a>
+                    <li ng-class="{active: menuNav==2}" ng-click="menuNav = 2;closeMobileMenu();" class="menuLi col-md-4 col-sm-4"><a ui-sref="programme">Au programme ?</a></li>
+                    <li class="dropdown menuLi col-md-4 col-sm-4" ng-class="{active: menuNav==3}">
+                        <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ng-class="{active: menuNav==3,}">Ou dormir ?<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li ng-class="{active: menuNav==5,}" ng-click="menuNav = 5;"><a ui-sref="dormir">AirBnb</a></li>
-                            <li ng-class="{active: menuNav==2,}" ng-click="menuNav = 2;"><a ui-sref="hotels">Hotels</a></li>
+                            <li  ng-click="menuNav = 3;closeMobileMenu();"><a ui-sref="dormir">AirBnb</a></li>
+                            <li  ng-click="menuNav = 3;closeMobileMenu();"><a ui-sref="hotels">Hôtels</a></li>
                         </ul>
                     </li>
 
                 </ul>
                 <ul class="nav navbar-nav  col-md-2 col-sm-2 row" style="padding-right: 0px; width: 10%" id="logo">
-                    <li style="width: 100%"><a ui-sref="home"><img src="./img/logo.png" class="col-md-12 col-lg-12 col-sm-12" style="padding-left:0px;padding-right:0px;"/></a></li>
+                    <li style="width: 100%" ng-click="menuNav = 0;"><a ui-sref="home"><img src="./img/Logo_ZD.png" class="col-md-12 col-lg-12 col-sm-12" style="padding-left:0px;padding-right:0px;"/></a></li>
                 </ul>
 
                 <ul class="nav navbar-nav  col-md-6 col-sm-6 row" style="width: 45%; padding-top:23px">
-                    <li ng-class="{active: menuNav==11,}" ng-click="menuNav = 11;" class="menuLi col-md-4 col-sm-4" ><a ui-sref="liensUtils">Liens utiles</a></li>
-                    <li ng-class="{active: menuNav==6,}" ng-click="menuNav = 6;" class="menuLi col-md-4 col-sm-4 " ><a ui-sref="cadeau">Le Cadeau</a></li>
-                    <li ng-class="{active: menuNav==7,}" ng-click="menuNav = 7;"  class="menuLi col-md-4 col-sm-4" ><a ui-sref="contact">Contact</a></li>
+                    <li ng-class="{active: menuNav==4,}" ng-click="menuNav = 4;closeMobileMenu();" class="menuLi col-md-4 col-sm-4" ><a ui-sref="liensUtils">Liens utiles</a></li>
+                    <li ng-class="{active: menuNav==5,}" ng-click="menuNav = 5;closeMobileMenu();" class="menuLi col-md-4 col-sm-4 " ><a ui-sref="cadeau">Le Cadeau</a></li>
+                    <li ng-class="{active: menuNav==6,}" ng-click="menuNav = 6;closeMobileMenu();"  class="menuLi col-md-4 col-sm-4" ><a ui-sref="contact">Contact</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
