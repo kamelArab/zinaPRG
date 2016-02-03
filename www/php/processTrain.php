@@ -65,7 +65,6 @@ if ( ! empty($errors)) {
   $headers  = 'MIME-Version: 1.0' . "\r\n";
   $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
   // En-têtes additionnels
-  $headers .= 'To: Mariage <postmaster@benzina2016.com>, Zina Djaïz <zina.djaiz@gmail.com>, Benjamin Mampuya<benjaminmampuya@gmail.com>' . "\r\n";
   $headers .= 'From: '.$email_from.'\r\n';
   $headers .='Reply-To: '.$email_from."rn" .
       'X-Mailer: PHP/' . phpversion();
