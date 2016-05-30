@@ -30,6 +30,9 @@
     "hammerjs": "",
     "angular-bootstrap": "~0.14.3",
     "bootstrap": "~3.3.6",
-    "angular-google-maps": "~2.2.1"
+    "angular-google-maps": ""
+  },
+  "resolutions": {
+    "angular": "1.5.5"
   }
 }

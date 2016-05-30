@@ -7,9 +7,9 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
         var $state = $injector.get("$state");
         $state.go("home");
     });
-    
+
     $stateProvider
-        
+
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/home',
@@ -45,9 +45,14 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
             url: '/cadeau',
             templateUrl: '/templates/cadeau.html'
         })
+        .state('brunch2', {
+            url: '/brunch2',
+            templateUrl: '/templates/brunch.html'
+        })
         .state('brunch', {
             url: '/brunch',
-            templateUrl: '/templates/brunch.html'
+            templateUrl: '/templates/brunch2.html',
+            controller: "brunchCtrl"
         })
         .state('programme', {
             url: '/programme',
@@ -77,21 +82,21 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
         })
 
 
-        
+
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('about', {
             url: '/about',
             views: {
                 '': { templateUrl: 'partial-about.html' },
                 'columnOne@about': { template: 'Look I am a column!' },
-                'columnTwo@about': { 
+                'columnTwo@about': {
                     templateUrl: 'table-data.html',
                     controller: 'scotchController'
                 }
             }
-            
+
         });
-        
+
 })
 .config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
@@ -111,9 +116,9 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$locationProvider,$
 });
 
 routerApp.controller('scotchController', function($scope) {
-    
+
     $scope.message = 'test';
-   
+
     $scope.scotches = [
         {
             name: 'Macallan 12',
@@ -128,5 +133,5 @@ routerApp.controller('scotchController', function($scope) {
             price: 20000
         }
     ];
-    
+
 });
